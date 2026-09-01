@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="vi" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Buổi 1 — Ứng dụng AI Agent trong Marketing & Tự động hoá | Bình Vương</title>
+<meta name="description" content="Tóm tắt buổi 1/3: nền tảng AI Agent (ẩn dụ căn bếp), tư duy AI First, chuẩn bị môi trường và quy trình tự động hoá đầu tiên." />
+<link rel="icon" type="image/png" href="assets/favicon-64.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..900&family=Inter:wght@400;500;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+/* ============ Bình Vương DNA Design V5 — tokens ============ */
+:root{
+  --paper:#f7f2e8; --paper-2:#efe6d5; --ink:#1d1b18; --muted:#686058;
+  --line:#ded2bf; --card:#fffaf0; --green:#214638; --green-2:#133023;
+  --orange:#d95127; --gold:#c9963e; --blue:#2f5f7f;
+  --shadow:0 18px 50px -24px rgba(29,27,24,.45);
+  --maxw:1180px;
+  --font-display:'Bricolage Grotesque',system-ui,sans-serif;
+  --font-body:'Inter',system-ui,sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+:root[data-theme="dark"]{
+  --paper:#08111d; --paper-2:#0d1726; --ink:#eef4fb; --muted:#94a3b8;
+  --line:rgba(148,163,184,.18); --card:rgba(13,22,36,.92); --green:#7dd3b0;
+  --green-2:#0f3c2f; --orange:#f59e0b; --gold:#d4a44d; --blue:#60a5fa;
+  --shadow:0 24px 60px -28px rgba(0,0,0,.7);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body); background:var(--paper); color:var(--ink);
+  -webkit-font-smoothing:antialiased; line-height:1.55; overflow-x:hidden;
+  transition:background .4s ease,color .4s ease;
+}
+/* subtle background texture */
+body::before{
+  content:""; position:fixed; inset:0; z-index:0; pointer-events:none;
+  background:
+    radial-gradient(1200px 600px at 12% -5%, color-mix(in srgb,var(--orange) 12%,transparent), transparent 60%),
+    radial-gradient(1000px 700px at 100% 0%, color-mix(in srgb,var(--blue) 14%,transparent), transparent 55%);
+  opacity:.8;
+}
+:root[data-theme="dark"] body::before{opacity:.55}
+
+/* ============ topbar ============ */
+.topbar{
+  position:fixed; top:0; left:0; right:0; z-index:40; min-height:64px;
+  display:flex; align-items:center; gap:18px; padding:10px clamp(16px,4vw,40px);
+  background:color-mix(in srgb,var(--paper) 82%,transparent);
+  backdrop-filter:blur(14px); border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit}
+.brand img{width:38px; height:38px; border-radius:50%; box-shadow:0 0 0 2px var(--gold)}
+.brand b{font-family:var(--font-display); font-weight:800; font-size:18px; letter-spacing:-.02em}
+.brand span{font-family:var(--font-mono); font-size:11px; color:var(--muted); display:block; letter-spacing:.08em; text-transform:uppercase}
+.topbar .spacer{flex:1}
+.counter{font-family:var(--font-mono); font-size:13px; font-weight:700; color:var(--muted)}
+.counter b{color:var(--orange)}
+.tbtn{
+  font-family:var(--font-body); font-weight:800; font-size:13px; cursor:pointer;
+  background:var(--card); color:var(--ink); border:1px solid var(--line);
+  border-radius:10px; padding:9px 13px; display:inline-flex; align-items:center; gap:7px;
+  transition:.18s ease;
+}
+.tbtn:hover{border-color:var(--orange); transform:translateY(-1px)}
+.progress{position:fixed; top:0; left:0; height:3px; background:linear-gradient(90deg,var(--orange),var(--gold)); z-index:50; width:0; transition:width .2s ease}
+
+/* ============ deck / slides ============ */
+main{position:relative; z-index:1}
+.slide{
+  min-height:100vh; width:100%; scroll-snap-align:start;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:104px clamp(16px,4vw,40px) 72px;
+}
+.wrap{width:100%; max-width:var(--maxw); margin:0 auto}
+html{scroll-snap-type:y proximity}
+
+.kicker{
+  font-family:var(--font-mono); font-weight:700; font-size:13px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--orange); display:inline-flex; align-items:center; gap:9px;
+  margin-bottom:18px;
+}
+.kicker::before{content:""; width:26px; height:2px; background:var(--orange); display:inline-block}
+:root[data-theme="dark"] .kicker{color:var(--gold)}
+:root[data-theme="dark"] .kicker::before{background:var(--gold)}
+h1{font-family:var(--font-display); font-weight:800; font-size:clamp(40px,7vw,88px); line-height:.98; letter-spacing:-.045em}
+h2{font-family:var(--font-display); font-weight:800; font-size:clamp(30px,4.6vw,58px); line-height:1.03; letter-spacing:-.035em; margin-bottom:8px}
+h3{font-family:var(--font-display); font-weight:700; font-size:22px; line-height:1.18; letter-spacing:-.01em}
+.sub{font-size:clamp(17px,2vw,22px); color:var(--muted); max-width:760px; margin-top:20px}
+.lead{font-size:19px; color:var(--muted); max-width:820px; margin-top:6px}
+p{max-width:760px}
+.mt{margin-top:28px}
+
+/* cards & grids */
+.grid{display:grid; gap:18px; margin-top:34px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g5{grid-template-columns:repeat(5,1fr)}
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:24px;
+  transition:transform .18s ease,border-color .18s ease; position:relative; overflow:hidden;
+}
+.card:hover{transform:translateY(-3px); border-color:color-mix(in srgb,var(--orange) 55%,var(--line))}
+.card .n{font-family:var(--font-mono); font-weight:700; font-size:13px; color:var(--gold)}
+.card h3{margin:8px 0 8px}
+.card p{font-size:15px; color:var(--muted); max-width:none}
+.tag{
+  display:inline-block; font-size:12px; font-weight:800; padding:6px 11px; border-radius:999px;
+  background:var(--paper-2); color:var(--green); border:1px solid var(--line);
+}
+:root[data-theme="dark"] .tag{background:rgba(125,211,176,.12)}
+.pill-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:18px}
+
+/* cover */
+.cover .wrap{display:grid; grid-template-columns:1.15fr .85fr; gap:40px; align-items:center}
+.cover-photo{
+  justify-self:center; width:min(340px,80%); aspect-ratio:1; border-radius:24px;
+  background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow);
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.cover-photo img{width:78%; height:78%; border-radius:50%; box-shadow:0 0 0 3px var(--gold),var(--shadow)}
+.meta-row{display:flex; flex-wrap:wrap; gap:10px; margin-top:26px}
+.chip{
+  font-family:var(--font-mono); font-size:13px; font-weight:700; padding:10px 14px;
+  border-radius:12px; background:var(--card); border:1px solid var(--line); color:var(--ink);
+}
+.chip b{color:var(--orange)}
+
+/* kitchen analogy row */
+.kitchen{display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-top:30px}
+.krole{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px; position:relative}
+.krole .emo{font-size:30px; line-height:1}
+.krole h3{font-size:17px; margin:12px 0 6px}
+.krole p{font-size:13.5px; color:var(--muted); max-width:none}
+.krole .role{font-family:var(--font-mono); font-size:11px; color:var(--gold); text-transform:uppercase; letter-spacing:.08em}
+
+/* concept list */
+.concepts{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin-top:30px}
+.concept{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px 22px}
+.concept .term{font-family:var(--font-display); font-weight:800; font-size:19px; letter-spacing:-.02em}
+.concept .plain{font-size:14.5px; color:var(--ink); margin-top:7px}
+.concept .ana{font-size:13.5px; color:var(--muted); margin-top:9px; padding-left:14px; border-left:2px solid var(--gold)}
+.concept .ana::before{content:"Ẩn dụ · "; font-weight:800; color:var(--gold)}
+
+/* flow steps */
+.flow{display:flex; flex-wrap:wrap; align-items:stretch; gap:10px; margin-top:30px}
+.step{flex:1 1 150px; background:var(--card); border:1px solid var(--line); border-radius:12px; padding:16px 16px; min-width:140px}
+.step .si{font-family:var(--font-mono); font-weight:700; color:var(--orange); font-size:12px}
+.step h3{font-size:16px; margin-top:6px}
+.step p{font-size:13px; color:var(--muted); max-width:none; margin-top:4px}
+.arrow{align-self:center; font-family:var(--font-mono); font-size:24px; color:var(--gold)}
+
+/* numbered list rows */
+.rows{display:grid; gap:12px; margin-top:26px}
+.row{display:flex; gap:16px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; align-items:flex-start}
+.row .idx{font-family:var(--font-mono); font-weight:700; color:var(--orange); font-size:20px; min-width:34px}
+.row .body h3{font-size:17px}
+.row .body p{font-size:14.5px; color:var(--muted); margin-top:4px; max-width:none}
+
+/* fears */
+.fear .bad{color:var(--orange); font-weight:800}
+.fear .good{color:var(--green); font-weight:800}
+:root[data-theme="dark"] .fear .good{color:var(--green)}
+
+/* two-column compare */
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:30px}
+.compare .side{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px}
+.compare .side.agent{border-color:color-mix(in srgb,var(--orange) 45%,var(--line))}
+.compare .side .lbl{font-family:var(--font-mono); font-size:12px; letter-spacing:.1em; text-transform:uppercase; font-weight:700}
+.compare .side.chat .lbl{color:var(--blue)} .compare .side.agent .lbl{color:var(--orange)}
+.compare .side h3{margin:10px 0 12px; font-size:24px}
+.compare .side p{font-size:15px; color:var(--muted); max-width:none}
+
+/* chapters / TOC */
+.toc{display:grid; gap:10px; margin-top:26px}
+.ch{display:grid; grid-template-columns:44px 1fr auto; gap:16px; align-items:center;
+  background:var(--card); border:1px solid var(--line); border-radius:12px; padding:14px 18px; transition:.18s ease}
+.ch:hover{border-color:color-mix(in srgb,var(--orange) 50%,var(--line)); transform:translateX(3px)}
+.ch .cn{font-family:var(--font-mono); font-weight:700; color:var(--gold); font-size:17px}
+.ch .ct{font-family:var(--font-display); font-weight:700; font-size:16px; letter-spacing:-.01em}
+.ch .cs{font-size:13px; color:var(--muted); margin-top:2px; max-width:none}
+.ch .time{font-family:var(--font-mono); font-size:12px; color:var(--muted); white-space:nowrap; text-align:right}
+
+/* takeaways */
+.take{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:30px}
+.take .t{display:flex; gap:14px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px}
+.take .t .k{color:var(--orange); font-size:20px; font-weight:900; font-family:var(--font-mono)}
+.take .t p{font-size:15px; max-width:none}
+
+/* footer / cta */
+.cta-card{background:linear-gradient(135deg,var(--green-2),color-mix(in srgb,var(--green-2) 60%,black)); color:#eef4fb; border-radius:22px; padding:44px clamp(24px,5vw,56px); border:1px solid var(--line)}
+:root[data-theme="dark"] .cta-card{background:linear-gradient(135deg,#0f3c2f,#08111d)}
+.cta-card h2{color:#fff}
+.cta-card .lead{color:rgba(238,244,251,.85)}
+.next-grid{display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:26px}
+.next{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.14); border-radius:14px; padding:20px}
+.next .nl{font-family:var(--font-mono); font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:.08em}
+.next p{color:rgba(238,244,251,.82); font-size:14.5px; margin-top:8px; max-width:none}
+
+.foot{margin-top:34px; font-family:var(--font-mono); font-size:12px; color:var(--muted); display:flex; gap:16px; flex-wrap:wrap; align-items:center}
+
+/* hint */
+.navhint{position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:30;
+  font-family:var(--font-mono); font-size:11px; color:var(--muted); background:color-mix(in srgb,var(--paper) 80%,transparent);
+  border:1px solid var(--line); border-radius:999px; padding:7px 14px; backdrop-filter:blur(8px); opacity:.9}
+
+/* responsive */
+@media(max-width:920px){
+  .cover .wrap{grid-template-columns:1fr; text-align:center}
+  .cover-photo{order:-1; width:min(220px,60%)}
+  .kicker{justify-content:center}
+  .g2,.g3,.g5,.concepts,.compare,.take,.next-grid,.kitchen{grid-template-columns:1fr}
+  .kitchen{grid-template-columns:1fr 1fr}
+  .ch{grid-template-columns:36px 1fr; }
+  .ch .time{grid-column:2; text-align:left}
+  .navhint{display:none}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important; scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="topbar">
+  <a class="brand" href="#s1">
+    <img src="assets/binhvuong-logo-256.png" alt="Bình Vương" />
+    <span style="line-height:1.1"><b>Bình Vương</b><span>AI Agent · Đào tạo</span></span>
+  </a>
+  <div class="spacer"></div>
+  <div class="counter"><b id="cur">01</b> / <span id="total">14</span></div>
+  <button class="tbtn" id="themeBtn" title="Đổi giao diện">🌙 <span id="themeLbl">Tối</span></button>
+</header>
+
+<main id="deck">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover" id="s1">
+    <div class="wrap">
+      <div>
+        <span class="kicker">Buổi 1 / 3 · 3 tháng 7, 2026</span>
+        <h1>Ứng dụng AI Agent trong Marketing &amp; Tự động hoá vận hành</h1>
+        <p class="sub">Từ khái niệm nền tảng đến quy trình tự động hoá thực chiến — hiểu cả “căn bếp AI”, tư duy <b>AI First</b>, và dựng quy trình đầu tiên: lấy dữ liệu Facebook &amp; tạo landing page.</p>
+        <div class="meta-row">
+          <span class="chip"><b>⏱</b> 2h29 · 9 chương</span>
+          <span class="chip"><b>◇</b> 5 phần nội dung</span>
+          <span class="chip"><b>▲</b> Giảng viên: Odigital Bình Vương</span>
+        </div>
+      </div>
+      <div class="cover-photo"><img src="assets/binhvuong-logo-256.png" alt="Bình Vương" /></div>
+    </div>
+  </section>
+
+  <!-- 2 · PROGRAM OVERVIEW -->
+  <section class="slide" id="s2">
+    <div class="wrap">
+      <span class="kicker">Tổng quan chương trình</span>
+      <h2>3 buổi — học tư duy &amp; quy trình, không cầm tay chỉ việc</h2>
+      <p class="lead">Phần thao tác chi tiết học viên xem video và làm bài tập từng bước; các buổi live tập trung giải đáp bài toán thực tế và tương tác.</p>
+      <div class="grid g3">
+        <div class="card"><span class="n">BUỔI 1 · 3/7</span><h3>Nền tảng &amp; quy trình đầu tiên</h3><p>Khái niệm AI Agent qua ẩn dụ căn bếp, tư duy AI First, chuẩn bị môi trường và tự động lấy dữ liệu Facebook → landing page.</p></div>
+        <div class="card"><span class="n">BUỔI 2 · 7/7</span><h3>Điều khiển AI qua command line</h3><p>Hoàn thiện Workflow Spec, cài môi trường, chuyển sang Claude / Codex và áp dụng quy trình Scout → Plan → Cook → Report → Fix.</p></div>
+        <div class="card"><span class="n">BUỔI 3 · 10/7</span><h3>Hoàn thiện &amp; đo lường end-to-end</h3><p>Offer, form, QR thanh toán, email/Zalo tự động; mở rộng tư duy vận hành hệ thống AI Agent nhiều máy (home server).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 · 5 PARTS -->
+  <section class="slide" id="s3">
+    <div class="wrap">
+      <span class="kicker">Lộ trình buổi 1</span>
+      <h2>5 phần chúng ta đi cùng nhau</h2>
+      <div class="rows">
+        <div class="row"><div class="idx">1</div><div class="body"><h3>Khái niệm nền tảng về AI Agent</h3><p>Hiểu hệ thống AI Agent qua ẩn dụ căn bếp: Model, Subagent, Tool, Skill, Harness — và phân biệt AI, Chatbot với Agent.</p></div></div>
+        <div class="row"><div class="idx">2</div><div class="body"><h3>Tư duy làm việc với AI — “AI First”</h3><p>Không biết thì hỏi AI trước, yêu cầu làm thử rồi luôn kiểm tra lại; con người giữ vai trò phân tích &amp; điều phối.</p></div></div>
+        <div class="row"><div class="idx">3</div><div class="body"><h3>Chuẩn bị môi trường làm việc</h3><p>Trang bị “máy móc &amp; môi trường” cho AI: cài thư viện, quản lý file nội quy (README) và mật khẩu (.env).</p></div></div>
+        <div class="row"><div class="idx">4</div><div class="body"><h3>Sai khiến &amp; điều khiển AI Agent</h3><p>Ra lệnh cho Agent thực thi — phần lớn là thao tác kỹ thuật lặp lại, đóng gói thành Skill để tái sử dụng.</p></div></div>
+        <div class="row"><div class="idx">5</div><div class="body"><h3>Quy trình tự động đầu tiên</h3><p>Xây hệ thống tự động lấy dữ liệu Facebook, phân tích và tạo thành một landing page hoàn chỉnh.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · 3 FEARS -->
+  <section class="slide" id="s4">
+    <div class="wrap">
+      <span class="kicker">Vượt rào cản tâm lý</span>
+      <h2>3 nỗi sợ khi bắt đầu — &amp; cách hoá giải</h2>
+      <div class="grid g3 fear">
+        <div class="card"><span class="tag">Nỗi sợ 1</span><h3 class="mt">“Tôi không biết code thì làm sao?”</h3><p class="mt"><span class="good">→</span> Không cần biết code. Bạn ra lệnh, AI Agent tự viết &amp; chạy mã để tạo hành động tự động — bạn chỉ mô tả nhu cầu.</p></div>
+        <div class="card"><span class="tag">Nỗi sợ 2</span><h3 class="mt">“Nghe kỹ thuật quá, thấy nản.”</h3><p class="mt"><span class="good">→</span> Dùng ẩn dụ dễ hiểu (căn bếp, chiếc xe) và bộ từ khoá bình dân để hình dung mà không cần nền tảng công nghệ.</p></div>
+        <div class="card"><span class="tag">Nỗi sợ 3</span><h3 class="mt">“Sợ làm sai, sợ lỗi/hỏng.”</h3><p class="mt"><span class="good">→</span> Cứ mạnh dạn “làm thử xem có được không” và thực hành liên tục; luôn kiểm tra lại &amp; giữ backup nên sai cũng không mất mát.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · CHATBOT vs AGENT -->
+  <section class="slide" id="s5">
+    <div class="wrap">
+      <span class="kicker">Khác biệt cốt lõi</span>
+      <h2>Chatbot &nbsp;vs&nbsp; AI Agent</h2>
+      <div class="compare">
+        <div class="side chat"><span class="lbl">Chatbot · nhận order</span><h3>Chỉ nói, không tự làm</h3><p>Như anh nhân viên nhận order: bạn ra lệnh, anh ấy trả lại văn bản/hoá đơn — còn có làm hay không thì không phải việc của anh ấy. Thời kỳ đầu ta “học câu lệnh” để AI hiểu mình hơn.</p></div>
+        <div class="side agent"><span class="lbl">Agent · đầu bếp</span><h3>Thực thi ra “món ăn” thật</h3><p>Như đầu bếp: nhận yêu cầu là bắt tay làm và trả ra kết quả thật (file, hành động tự động). Chỉ cần nói rõ ngữ cảnh — thậm chí Agent còn hỏi ngược lại bạn.</p></div>
+      </div>
+      <p class="lead mt"><b>GUI vs Code:</b> giao diện là cái ta thấy &amp; bấm (đồng hồ, công-tơ-mét của xe); mã lập trình chạy phía sau mới là động cơ — ta không cần tự viết vì AI viết thay.</p>
+    </div>
+  </section>
+
+  <!-- 6 · KITCHEN ANALOGY (hero) -->
+  <section class="slide" id="s6">
+    <div class="wrap">
+      <span class="kicker">Ẩn dụ trung tâm</span>
+      <h2>Căn bếp AI — 5 vai trò của một hệ thống Agent</h2>
+      <p class="lead">Hình dung cả hệ thống AI Agent như một căn bếp/nhà hàng: mỗi vai trò tương ứng một thành phần kỹ thuật.</p>
+      <div class="kitchen">
+        <div class="krole"><div class="emo">👨‍🍳</div><span class="role">Model</span><h3>Bếp trưởng</h3><p>Bộ não điều phối &amp; quyết định. Model càng mạnh (Opus, Sonnet, Gemini, GPT) thì món càng ngon.</p></div>
+        <div class="krole"><div class="emo">🧑‍🍳</div><span class="role">Subagent</span><h3>Người nấu</h3><p>Nhân sự thực thi do bếp trưởng điều phối, làm thao tác cụ thể &amp; việc phụ lon ton.</p></div>
+        <div class="krole"><div class="emo">🔪</div><span class="role">Tool</span><h3>Dao thớt nồi chảo</h3><p>Công cụ để làm việc: mở trình duyệt, chụp màn hình, gọi API. Thiếu thì mượn/mua rồi đưa AI dùng.</p></div>
+        <div class="krole"><div class="emo">📖</div><span class="role">Skill</span><h3>Cẩm nang công thức</h3><p>Kỹ năng đóng gói cách làm riêng để lặp lại đúng chuẩn mỗi ngày, nhanh &amp; hay hơn mặc định.</p></div>
+        <div class="krole"><div class="emo">🏙️</div><span class="role">Harness</span><h3>Cả nhà hàng + backup</h3><p>Toàn bộ hệ thống hỗ trợ &amp; dự phòng khi sự cố; ví dụ UPS giữ điện 30 phút để kịp “hạ cánh”.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · KEY CONCEPTS 1 -->
+  <section class="slide" id="s7">
+    <div class="wrap">
+      <span class="kicker">Từ điển khái niệm · 1/2</span>
+      <h2>Nói “tiếng người” về công nghệ</h2>
+      <div class="concepts">
+        <div class="concept"><div class="term">AI / Chatbot</div><div class="plain">Nhận văn bản, trả văn bản bằng cách dự đoán ký tự tiếp theo dựa trên dữ liệu đã huấn luyện; chỉ nói, không tự làm.</div><div class="ana">Anh nhận order: bạn đặt món, anh ấy chỉ đưa lại tờ hoá đơn.</div></div>
+        <div class="concept"><div class="term">AI Agent</div><div class="plain">Tự động thực hiện nhiệm vụ &amp; tạo hành động thật: mở trình duyệt, chạy mã, lấy dữ liệu, xuất kết quả.</div><div class="ana">Đầu bếp: gọi tô phở, một lúc sau có phở ăn liền.</div></div>
+        <div class="concept"><div class="term">Model (Mô hình)</div><div class="plain">Bộ não quyết định &amp; điều phối; càng “cao cấp” càng thông minh, hiệu quả (Opus, Sonnet, Gemini, GPT).</div><div class="ana">Bếp trưởng — quyết định nấu gì, làm gì.</div></div>
+        <div class="concept"><div class="term">Tool / Skill / Harness</div><div class="plain">Tool = công cụ thao tác; Skill = cẩm nang công thức tái dùng; Harness = cả hệ thống + backup vận hành đồng bộ.</div><div class="ana">Dao thớt · sách công thức · cả nhà hàng.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8 · KEY CONCEPTS 2 -->
+  <section class="slide" id="s8">
+    <div class="wrap">
+      <span class="kicker">Từ điển khái niệm · 2/2</span>
+      <h2>Task, Workflow &amp; cổng kết nối</h2>
+      <div class="concepts">
+        <div class="concept"><div class="term">Task vs Workflow</div><div class="plain">Task là một việc nhỏ, làm nhanh; Workflow là cả quy trình dài nhiều bước lặp lại.</div><div class="ana">Task = nấu tô mì gói; Workflow = tổ chức cả bữa tiệc.</div></div>
+        <div class="concept"><div class="term">Cổng kết nối (API / token)</div><div class="plain">Cách để hai công cụ gọi &amp; trao đổi dữ liệu; token là “mật mã” xác thực để không bị mạo danh.</div><div class="ana">Chìa khoá/mật mã khi hai đối tác làm việc.</div></div>
+        <div class="concept"><div class="term">Vibe Coding</div><div class="plain">Dùng kỹ thuật rất nhẹ nhàng nhưng ứng dụng cao — biến công việc thành quy trình chạy được, không phải sưu tầm câu lệnh.</div><div class="ana">Không học thuộc bí kíp — cứ mô tả nhu cầu &amp; sáng tạo theo bối cảnh của mình.</div></div>
+        <div class="concept"><div class="term">Antigravity</div><div class="plain">Công cụ (IDE) do Google mua lại và gắn Model AI vào — nơi ta chat, chọn model &amp; để AI thao tác tự động.</div><div class="ana">Xưởng làm việc chung của bạn &amp; AI, mỗi folder là một “văn phòng” dự án.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9 · MODELS RANKING -->
+  <section class="slide" id="s9">
+    <div class="wrap">
+      <span class="kicker">Chọn “bếp trưởng”</span>
+      <h2>Xếp hạng Model cho tự động hoá</h2>
+      <p class="lead">Đánh giá riêng cho tác vụ automation / agent (không phải mọi tác vụ).</p>
+      <div class="grid g3">
+        <div class="card" style="border-color:color-mix(in srgb,var(--orange) 55%,var(--line))"><span class="n">#1 · MẠNH NHẤT</span><h3>Claude — Opus 4.6 / Sonnet 4.6</h3><p>Của Anthropic (tách ra từ OpenAI). Triết lý “mọi việc đều giải quyết được bằng code” → được huấn luyện rất mạnh về lập trình, hợp nhất cho hệ thống tự động &amp; agent.</p></div>
+        <div class="card"><span class="n">#2</span><h3>GPT — OpenAI</h3><p>Mạnh, phổ biến; là lựa chọn cân bằng cho nhiều tác vụ tổng quát.</p></div>
+        <div class="card"><span class="n">#3</span><h3>Gemini — Google</h3><p>Gắn sẵn trong Antigravity, tiện khởi đầu; đánh giá yếu hơn cho riêng tác vụ automation.</p></div>
+      </div>
+      <div class="pill-row">
+        <span class="tag">Quy tắc: số phiên bản càng cao → càng thông minh</span>
+        <span class="tag">Bắt đầu từ Opus 4.6 / Sonnet 4.6 trở lên</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 · FACEBOOK WORKFLOW DEMO -->
+  <section class="slide" id="s10">
+    <div class="wrap">
+      <span class="kicker">Thực chiến · Phần 5</span>
+      <h2>Demo: Facebook → phân tích → Landing page</h2>
+      <p class="lead">Mục tiêu: tự động lấy nội dung nghiên cứu đối thủ, phân tích &amp; tổng hợp thành một landing page hoàn chỉnh.</p>
+      <div class="flow">
+        <div class="step"><div class="si">B1</div><h3>Bóc tách workflow</h3><p>Chọn đối thủ/group → tìm bài ≥100 tương tác → phân tích ưu/nhược &amp; điểm mù → tổng hợp → landing page.</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="si">B2</div><h3>Thử Computer Vision</h3><p>Agent tự mở trình duyệt, chụp màn hình, cuộn &amp; đọc ảnh. Kết quả: chậm, tốn token, vướng đăng nhập.</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="si">B3</div><h3>Áp dụng “AI First”</h3><p>Hỏi AI công cụ nào lấy được Facebook → gợi ý Apify; hỏi tiếp ưu/nhược &amp; chi phí (≈ dưới 1$/tháng).</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="si">B4</div><h3>Đưa API token</h3><p>Lấy token Apify, đưa cho Antigravity (model Opus) như “chìa khoá” uỷ quyền truy cập.</p></div>
+        <div class="arrow">→</div>
+        <div class="step"><div class="si">B5</div><h3>Xuất landing page</h3><p>AI tự tạo script/skill gọi Apify, lấy 5 bài, phân tích sâu &amp; xuất index.html — tái dùng lần sau chỉ bằng cách bật lên.</p></div>
+      </div>
+      <div class="pill-row">
+        <span class="tag">Bài học: thao tác trực quan thì chậm &amp; tốn token</span>
+        <span class="tag">Dùng browser tool / MCP để lấy thẳng kết quả</span>
+        <span class="tag">Ta cần KẾT QUẢ, không cần xem agent thao tác</span>
+        <span class="tag">Apify lấy được cả TikTok</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11 · PROJECT LOOP -->
+  <section class="slide" id="s11">
+    <div class="wrap">
+      <span class="kicker">Quy trình dự án lớn</span>
+      <h2>Đừng giao việc mù — vừa giao vừa giám sát</h2>
+      <p class="lead">AI có thể ảo giác/sai sót. Với dự án lớn, lặp vòng 6 bước và luôn kiểm tra bằng log/report.</p>
+      <div class="flow">
+        <div class="step"><div class="si">01</div><h3>Scout</h3><p>Nghiên cứu, “khám xe” trước khi làm.</p></div><div class="arrow">→</div>
+        <div class="step"><div class="si">02</div><h3>Premortem</h3><p>Lường trước rủi ro, cái gì có thể hỏng.</p></div><div class="arrow">→</div>
+        <div class="step"><div class="si">03</div><h3>Plan</h3><p>Chia nhỏ thành các bước rõ ràng.</p></div><div class="arrow">→</div>
+        <div class="step"><div class="si">04</div><h3>Cook</h3><p>Thực thi từng phần.</p></div><div class="arrow">→</div>
+        <div class="step"><div class="si">05</div><h3>Report</h3><p>Ghi log/báo cáo để soi lại.</p></div><div class="arrow">→</div>
+        <div class="step"><div class="si">06</div><h3>Fix</h3><p>Sửa &amp; lặp lại vòng.</p></div>
+      </div>
+      <p class="lead mt"><b>Ví dụ thực chiến:</b> review một dự án CRM bán hàng — chạy Scout đọc log/report phát hiện hệ thống “mất trục”, rút bài học bằng AI, ưu tiên đi theo trục nghiệp vụ khách hàng; quy ước đặt tên theo ngày, plan chia nhỏ, bảng dữ liệu tổng để không thất thoát khách.</p>
+    </div>
+  </section>
+
+  <!-- 12 · TAKEAWAYS -->
+  <section class="slide" id="s12">
+    <div class="wrap">
+      <span class="kicker">Ghi nhớ</span>
+      <h2>6 điều mang về</h2>
+      <div class="take">
+        <div class="t"><span class="k">01</span><p>Mọi việc đều có thể giải quyết bằng code, và AI tự viết + chạy code thay bạn — không cần biết lập trình, chỉ cần bỏ rào cản tâm lý.</p></div>
+        <div class="t"><span class="k">02</span><p>Bóc tách mục tiêu thành Task nhỏ rồi ghép thành Workflow; càng chi tiết &amp; rõ ràng, kết quả càng tốt và càng đỡ tốn tiền AI.</p></div>
+        <div class="t"><span class="k">03</span><p>“AI First”: không biết thì hỏi AI, yêu cầu làm thử rồi kiểm tra lại — đừng sợ sai.</p></div>
+        <div class="t"><span class="k">04</span><p>Bạn là “bếp trưởng” phân tích &amp; điều phối; AI chỉ là nhân sự thực thi. Mất khâu phân tích thì cả “bữa tiệc” hỏng.</p></div>
+        <div class="t"><span class="k">05</span><p>Cần kết quả, không cần xem agent thao tác từng bước; ưu tiên công cụ nhanh, nhẹ, ít tốn token.</p></div>
+        <div class="t"><span class="k">06</span><p>Luôn giám sát khi giao việc, ghi log/report, và đặc biệt bảo mật + backup (nhất là API key &amp; file .env).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 13 · CHAPTERS / VIDEO TOC -->
+  <section class="slide" id="s13">
+    <div class="wrap">
+      <span class="kicker">Mục lục video · 9 chương</span>
+      <h2>Xem lại theo từng phần</h2>
+      <div class="toc">
+        <div class="ch"><span class="cn">01</span><div><div class="ct">Mở đầu, 3 nỗi sợ &amp; nền tảng AI / AI Agent</div><div class="cs">Lộ trình 3 buổi &amp; 5 phần; phân biệt Chatbot với Agent; triết lý “mọi việc giải quyết bằng code”.</div></div><span class="time">0:00 – 14:13</span></div>
+        <div class="ch"><span class="cn">02</span><div><div class="ct">Công cụ Antigravity: IDE, Model AI &amp; giao diện</div><div class="cs">Antigravity là gì, Model như cỗ máy (Opus/Gemini/GPT), hướng dẫn giao diện &amp; folder dự án.</div></div><span class="time">14:13 – 20:35</span></div>
+        <div class="ch"><span class="cn">03</span><div><div class="ct">Demo lấy dữ liệu Facebook &amp; bài học token</div><div class="cs">Agent tự mở trình duyệt, chụp màn hình, computer vision — chậm &amp; tốn token; ta cần kết quả.</div></div><span class="time">20:35 – 32:40</span></div>
+        <div class="ch"><span class="cn">04</span><div><div class="ct">Ẩn dụ căn bếp &amp; Chatbot vs Agent</div><div class="cs">Model=bếp trưởng, Subagent=người nấu, Tool=dao thớt, Skill=cẩm nang, Harness=nhà hàng+backup.</div></div><span class="time">32:40 – 44:06</span></div>
+        <div class="ch"><span class="cn">05</span><div><div class="ct">Task vs Workflow, AI First &amp; công cụ Apify</div><div class="cs">Bóc workflow 5 bước nghiên cứu đối thủ; tư duy AI First; tìm ra Apify &amp; khái niệm API/token.</div></div><span class="time">44:06 – 1:00:00</span></div>
+        <div class="ch"><span class="cn">06</span><div><div class="ct">Tạo landing page tự động qua API</div><div class="cs">Đưa token cho Opus → tự tạo script/skill, lấy 5 bài, phân tích &amp; xuất index.html; TikTok tương tự.</div></div><span class="time">1:00:00 – 1:17:15</span></div>
+        <div class="ch"><span class="cn">07</span><div><div class="ct">Chuẩn bị môi trường &amp; Workflow Spec</div><div class="cs">README (nội quy) &amp; .env (mật khẩu); task mơ hồ → kết quả mơ hồ; Workflow Spec như bản đồ hệ thống.</div></div><span class="time">1:17:15 – 1:38:01</span></div>
+        <div class="ch"><span class="cn">08</span><div><div class="ct">Vòng lặp triển khai dự án &amp; giám sát AI</div><div class="cs">Scout → Premortem → Plan → Cook → Report → Fix; ví dụ cấu trúc dự án CRM/LMS.</div></div><span class="time">1:38:01 – 2:01:46</span></div>
+        <div class="ch"><span class="cn">09</span><div><div class="ct">Thực chiến CRM, hạ tầng &amp; hỏi đáp</div><div class="cs">Review dự án CRM thật, đi theo trục nghiệp vụ; hướng command line/home server; giao bài tập &amp; Q&amp;A.</div></div><span class="time">2:01:46 – 2:28:58</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 14 · NEXT / CTA -->
+  <section class="slide" id="s14">
+    <div class="wrap">
+      <div class="cta-card">
+        <span class="kicker" style="color:var(--gold)">Chuẩn bị cho buổi sau</span>
+        <h2>Bài tập &amp; hướng đi tiếp theo</h2>
+        <p class="lead">Hoàn thành Workflow Spec cho bài toán của bạn, cài môi trường làm việc với AI, và giữ kỹ file .env (bảo mật API key).</p>
+        <div class="next-grid">
+          <div class="next"><span class="nl">Buổi 2 · 7/7</span><p>Điều khiển AI qua command line (Claude / Codex), hoàn thiện Workflow Spec, áp dụng Scout → Premortem → Plan → Cook → Report → Fix để dựng hệ thống lớn hơn.</p></div>
+          <div class="next"><span class="nl">Buổi 3 · 10/7</span><p>Hoàn thiện &amp; đo lường quy trình end-to-end (offer, form, QR thanh toán, email/Zalo tự động); mở rộng vận hành hệ thống AI Agent nhiều máy.</p></div>
+        </div>
+        <div class="foot">
+          <span>© 2026 Bình Vương · Đào tạo ứng dụng AI Agent</span>
+          <span>binhvuong.vn</span>
+          <span>Buổi 1/3 — 3 tháng 7, 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div class="navhint">↑ ↓ / Space để chuyển slide · T để đổi giao diện</div>
+
+<script>
+(function(){
+  const root=document.documentElement, slides=[...document.querySelectorAll('.slide')];
+  document.getElementById('total').textContent=String(slides.length).padStart(2,'0');
+  const cur=document.getElementById('cur'), prog=document.getElementById('progress');
+  const btn=document.getElementById('themeBtn'), lbl=document.getElementById('themeLbl');
+
+  // theme: localStorage -> prefers-color-scheme -> dark default
+  const saved=localStorage.getItem('bv-theme');
+  const initial=saved||((window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'warm');
+  setTheme(initial);
+  function setTheme(t){root.setAttribute('data-theme',t);localStorage.setItem('bv-theme',t);
+    const dark=t==='dark'; btn.firstChild.textContent=dark?'🌙 ':'☀️ '; lbl.textContent=dark?'Tối':'Sáng';}
+  btn.addEventListener('click',()=>setTheme(root.getAttribute('data-theme')==='dark'?'warm':'dark'));
+
+  // active slide + progress via IntersectionObserver
+  let idx=0;
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){
+    idx=slides.indexOf(e.target); cur.textContent=String(idx+1).padStart(2,'0');
+    prog.style.width=((idx+1)/slides.length*100)+'%';}});},{threshold:.55});
+  slides.forEach(s=>io.observe(s));
+
+  function go(n){n=Math.max(0,Math.min(slides.length-1,n));slides[n].scrollIntoView({behavior:'smooth'});}
+  window.addEventListener('keydown',(e)=>{
+    if(e.key==='ArrowDown'||e.key==='PageDown'||e.key===' '){e.preventDefault();go(idx+1);}
+    else if(e.key==='ArrowUp'||e.key==='PageUp'){e.preventDefault();go(idx-1);}
+    else if(e.key==='Home'){e.preventDefault();go(0);}
+    else if(e.key==='End'){e.preventDefault();go(slides.length-1);}
+    else if(e.key.toLowerCase()==='t'){setTheme(root.getAttribute('data-theme')==='dark'?'warm':'dark');}
+  });
+})();
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v3d52b47920f24c319d37e2661827c42b1787588026925" integrity="sha512-d9sL6GJLXn6fInD1+TVXhTcQOsmxeHfmHAvwGDIxp5TO+uo1fiWW7mHomMj4MLRlCsJDTqXzWLHJFFlPCEIj/A==" data-cf-beacon='{"version":"2024.11.0","token":"beba955a55bc42718df9bc494053b1ef","r":1}' crossorigin="anonymous"></script>
+</body>
+</html>
