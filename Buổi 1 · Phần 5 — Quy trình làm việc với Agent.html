@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<!-- saved from url=(0073)https://hoc.binhvuong.vn/learn/ai-blackboard-2026/buoi-1-phan-5-quy-trinh -->
+<html lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f2e8">
+    <meta name="description" content="Hệ thống học tập trực tuyến của Bình Vương">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-2.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="https://hoc.binhvuong.vn/favicon.png">
+    <link rel="apple-touch-icon" href="https://hoc.binhvuong.vn/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./static/css2" rel="stylesheet">
+    <title>Buổi 1 · Phần 5 — Quy trình làm việc với Agent</title>
+    <link rel="manifest" href="https://hoc.binhvuong.vn/manifest.webmanifest">
+    <link rel="stylesheet" href="./static/base-layout.DrM8jPi6.css">
+    <style>.lesson-prose h1{margin-top:1.5rem;font-size:1.75rem;font-weight:700;color:var(--forest)}.lesson-prose h2{margin-top:1.5rem;font-size:1.375rem;font-weight:600;color:var(--forest)}.lesson-prose h3{margin-top:1.25rem;font-size:1.125rem;font-weight:600}.lesson-prose h4{margin-top:1rem;font-size:1rem;font-weight:600}.lesson-prose p{margin-top:.75rem;line-height:1.65}.lesson-prose ul,.lesson-prose ol{margin-top:.75rem;margin-left:1.5rem}.lesson-prose ul{list-style:disc}.lesson-prose ol{list-style:decimal}.lesson-prose li{margin-top:.25rem;line-height:1.6}.lesson-prose a{color:var(--forest);text-decoration:underline}.lesson-prose code{background:#faf5eb;padding:.125rem .3rem;border-radius:.25rem;font-size:.875em}.lesson-prose pre{margin-top:1rem;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:.5rem;font-size:.875em;overflow:auto;line-height:1.5}.lesson-prose pre code{background:transparent;padding:0;color:inherit}.lesson-prose blockquote{margin-top:1rem;padding:.75rem 1rem;border-left:4px solid var(--forest);background:#faf5eb;font-style:italic;border-radius:0 .25rem .25rem 0}.lesson-prose img{margin-top:1rem;border-radius:.375rem;max-width:100%}.lesson-prose hr{margin:2rem 0;border:0;border-top:1px solid #E5E7EB}.lesson-prose table{margin-top:1rem;width:100%;border-collapse:collapse;font-size:.875rem}.lesson-prose th,.lesson-prose td{border:1px solid #E5E7EB;padding:.5rem .75rem;text-align:left}.lesson-prose th{background:#faf5eb;font-weight:600}.lesson-prose strong{font-weight:600;color:#1f2937}
+</style>
+</head>
+
+<body class="min-h-screen">
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+    <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script>
+    <script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+    <header class="border-b bg-white">
+        <div class="mx-auto max-w-3xl px-4 pb-4">
+            <h1 class="text-2xl font-bold text-[var(--forest)]">Buổi 1 · Phần 5 — Quy trình làm việc với Agent</h1>
+            <p class="mt-1 text-sm text-gray-600">Vòng lặp Scout → Brainstorm → Plan → Cook → Test → Fix. Đừng giao việc mù.</p>
+        </div>
+    </header>
+    <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+    <astro-island uid="2dPylU" prefix="r3" component-url="/_astro/lesson-renderer.nQ0UN1Rd.js" component-export="LessonRenderer" renderer-url="/_astro/client.DTojXMD-.js" props="{&quot;classId&quot;:[0,&quot;102&quot;],&quot;lessonId&quot;:[0,&quot;125&quot;],&quot;content&quot;:[0,{&quot;steps&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;p5-s1&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Một vòng lặp duy nhất&quot;],&quot;body&quot;:[0,&quot;Bạn đã biết tả task rõ. Giờ là cách **giao và giám sát** để agent không làm bậy. Cả khóa dùng một vòng lặp:\n\n&gt; **Scout → Brainstorm → Plan → Cook → Test → Fix**&quot;]}],[0,{&quot;id&quot;:[0,&quot;p5-s2&quot;],&quot;type&quot;:[0,&quot;mindset-cards&quot;],&quot;cards&quot;:[1,[[0,{&quot;label&quot;:[0,&quot;Scout&quot;],&quot;equals&quot;:[0,&quot;Do thám&quot;],&quot;description&quot;:[0,&quot;Cho AI đọc bối cảnh — tài liệu, dự án, mục tiêu — trước khi làm gì.&quot;]}],[0,{&quot;label&quot;:[0,&quot;Brainstorm&quot;],&quot;equals&quot;:[0,&quot;Nghĩ hướng&quot;],&quot;description&quot;:[0,&quot;Nhờ AI đưa vài cách làm, đừng chốt ngay cách đầu.&quot;]}],[0,{&quot;label&quot;:[0,&quot;Plan&quot;],&quot;equals&quot;:[0,&quot;Lập kế hoạch&quot;],&quot;description&quot;:[0,&quot;Chọn một hướng, bắt AI viết kế hoạch, và BẠN duyệt.&quot;]}],[0,{&quot;label&quot;:[0,&quot;Cook&quot;],&quot;equals&quot;:[0,&quot;Nấu&quot;],&quot;description&quot;:[0,&quot;Cho AI thực thi — tạo file, sửa file, chạy lệnh.&quot;]}],[0,{&quot;label&quot;:[0,&quot;Test&quot;],&quot;equals&quot;:[0,&quot;Kiểm tra&quot;],&quot;description&quot;:[0,&quot;Chạy được không, đúng ý không, có rủi ro không.&quot;]}],[0,{&quot;label&quot;:[0,&quot;Fix&quot;],&quot;equals&quot;:[0,&quot;Sửa&quot;],&quot;description&quot;:[0,&quot;Vá lỗi, cải tiến, lặp lại vòng này.&quot;]}]]]}],[0,{&quot;id&quot;:[0,&quot;p5-s3&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Cái van an toàn quan trọng nhất&quot;],&quot;body&quot;:[0,&quot;Điểm chốt duy nhất phải nhớ hôm nay: **trước khi cho AI làm, bắt nó lập kế hoạch và bạn đọc kế hoạch đó.**\n\nRiêng bước Plan còn có 3 lớp — plan validator (soi thiếu bước), red-team (phản biện rủi ro), detail plan (bẻ nhỏ) — nhưng bạn chưa cần thuộc, cứ nhớ \&quot;bắt lập plan, mình duyệt\&quot; là đủ.\n\nPrompt mẫu ép agent theo quy trình:\n```\nHãy làm theo quy trình sau, KHÔNG sửa file trước khi tôi duyệt plan:\n1. Scout: đọc bối cảnh và file liên quan.\n2. Brainstorm: đưa 2-3 hướng làm khả thi.\n3. Plan: chọn hướng phù hợp, lập kế hoạch từng bước.\n4. Tự kiểm tra kế hoạch có thiếu bước nào không.\n5. Nêu các rủi ro và điểm cần tôi xác nhận.\n6. Chờ tôi đồng ý rồi mới thực hiện.\n7. Làm xong thì test và tóm tắt kết quả.\n```&quot;]}],[0,{&quot;id&quot;:[0,&quot;p5-s4&quot;],&quot;type&quot;:[0,&quot;question&quot;],&quot;question&quot;:[0,{&quot;id&quot;:[0,&quot;p5-q1&quot;],&quot;type&quot;:[0,&quot;single-choice&quot;],&quot;prompt&quot;:[0,&quot;Điều quan trọng nhất phải làm TRƯỚC KHI cho agent sửa file?&quot;],&quot;options&quot;:[1,[[0,{&quot;value&quot;:[0,&quot;a&quot;],&quot;label&quot;:[0,&quot;Bắt nó lập kế hoạch và mình đọc/duyệt kế hoạch đó&quot;]}],[0,{&quot;value&quot;:[0,&quot;b&quot;],&quot;label&quot;:[0,&quot;Để nó tự làm cho nhanh rồi xem kết quả&quot;]}],[0,{&quot;value&quot;:[0,&quot;c&quot;],&quot;label&quot;:[0,&quot;Yêu cầu nó viết thật nhiều code&quot;]}]]],&quot;correctValue&quot;:[0,&quot;a&quot;],&quot;wrongHint&quot;:[0,&quot;Cái van an toàn của cả khoá: bắt lập plan, mình duyệt — rồi mới cho làm.&quot;]}]}],[0,{&quot;id&quot;:[0,&quot;p5-s5&quot;],&quot;type&quot;:[0,&quot;acknowledge&quot;],&quot;body&quot;:[0,&quot;Một quy trình an toàn: Scout → Fix, luôn bắt agent lập plan và mình duyệt trước khi cho làm.&quot;],&quot;checkboxLabel&quot;:[0,&quot;Tôi đã nắm quy trình làm việc với agent&quot;]}]]],&quot;meta&quot;:[0,{&quot;chatMode&quot;:[0,true]}]}],&quot;initialAnswers&quot;:[0,{&quot;p5-q1&quot;:[0,&quot;a&quot;]}],&quot;isSubmitted&quot;:[0,true],&quot;nextLessonSlug&quot;:[0,&quot;buoi-1-phan-6-an-toan&quot;],&quot;classSlug&quot;:[0,&quot;ai-blackboard-2026&quot;],&quot;preview&quot;:[0,false],&quot;chatMode&quot;:[0,true]}" client="load" opts="{&quot;name&quot;:&quot;LessonRenderer&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="mx-auto max-w-3xl space-y-5 p-4">
+            <div id="p5-s1" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Một vòng lặp duy nhất</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Bạn đã biết tả task rõ. Giờ là cách <strong>giao và giám sát</strong> để agent không làm bậy. Cả khóa dùng một vòng lặp:</p>
+                        <blockquote>
+                            <p><strong>Scout → Brainstorm → Plan → Cook → Test → Fix</strong></p>
+                        </blockquote>
+                    </div>
+                </section>
+            </div>
+            <div id="p5-s2" class="scroll-mt-16">
+                <section class="grid gap-3 md:grid-cols-3">
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Scout</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Do thám</div>
+                        <p class="mt-2 text-sm text-gray-600">Cho AI đọc bối cảnh — tài liệu, dự án, mục tiêu — trước khi làm gì.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Brainstorm</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Nghĩ hướng</div>
+                        <p class="mt-2 text-sm text-gray-600">Nhờ AI đưa vài cách làm, đừng chốt ngay cách đầu.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Plan</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Lập kế hoạch</div>
+                        <p class="mt-2 text-sm text-gray-600">Chọn một hướng, bắt AI viết kế hoạch, và BẠN duyệt.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Cook</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Nấu</div>
+                        <p class="mt-2 text-sm text-gray-600">Cho AI thực thi — tạo file, sửa file, chạy lệnh.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Test</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Kiểm tra</div>
+                        <p class="mt-2 text-sm text-gray-600">Chạy được không, đúng ý không, có rủi ro không.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">Fix</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Sửa</div>
+                        <p class="mt-2 text-sm text-gray-600">Vá lỗi, cải tiến, lặp lại vòng này.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="p5-s3" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Cái van an toàn quan trọng nhất</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Điểm chốt duy nhất phải nhớ hôm nay: <strong>trước khi cho AI làm, bắt nó lập kế hoạch và bạn đọc kế hoạch đó.</strong></p>
+                        <p>Riêng bước Plan còn có 3 lớp — plan validator (soi thiếu bước), red-team (phản biện rủi ro), detail plan (bẻ nhỏ) — nhưng bạn chưa cần thuộc, cứ nhớ "bắt lập plan, mình duyệt" là đủ.</p>
+                        <p>Prompt mẫu ép agent theo quy trình:</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code>Hãy làm theo quy trình sau, KHÔNG sửa file trước khi tôi duyệt plan:
+1. Scout: đọc bối cảnh và file liên quan.
+2. Brainstorm: đưa 2-3 hướng làm khả thi.
+3. Plan: chọn hướng phù hợp, lập kế hoạch từng bước.
+4. Tự kiểm tra kế hoạch có thiếu bước nào không.
+5. Nêu các rủi ro và điểm cần tôi xác nhận.
+6. Chờ tôi đồng ý rồi mới thực hiện.
+7. Làm xong thì test và tóm tắt kết quả.
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                    </div>
+                </section>
+            </div>
+            <div></div>
+        </div>
+    </astro-island>
+    <astro-island uid="Z29fhHP" prefix="r5" component-url="/_astro/help-bell-widget.Bki928HK.js" component-export="HelpBellWidget" renderer-url="/_astro/client.DTojXMD-.js" props="{}" client="idle" opts="{&quot;name&quot;:&quot;HelpBellWidget&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="fixed bottom-5 right-5 z-40 print:hidden"><button type="button" aria-label="Cần trợ giúp" aria-expanded="false" class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                    <path d="M12 2a1 1 0 0 1 1 1v.6a6 6 0 0 1 5 5.9v3.2l1.7 2.6a1 1 0 0 1-.84 1.55H5.14a1 1 0 0 1-.84-1.55L6 12.7V9.5a6 6 0 0 1 5-5.9V3a1 1 0 0 1 1-1Zm0 20a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22Z"></path>
+                </svg></button></div>
+    </astro-island>
+</body>
+
+</html>

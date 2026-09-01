@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0074)https://hoc.binhvuong.vn/learn/ai-blackboard-2026/chuan-bi-cong-cu-hoc-tap -->
+<html lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f2e8">
+    <meta name="description" content="Hệ thống học tập trực tuyến của Bình Vương">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-2.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="https://hoc.binhvuong.vn/favicon.png">
+    <link rel="apple-touch-icon" href="https://hoc.binhvuong.vn/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./static/css2" rel="stylesheet">
+    <title>Chuẩn bị · Cài công cụ (Antigravity IDE)</title>
+    <link rel="manifest" href="https://hoc.binhvuong.vn/manifest.webmanifest">
+    <link rel="stylesheet" href="./static/base-layout.DrM8jPi6.css">
+    <style>.lesson-prose h1{margin-top:1.5rem;font-size:1.75rem;font-weight:700;color:var(--forest)}.lesson-prose h2{margin-top:1.5rem;font-size:1.375rem;font-weight:600;color:var(--forest)}.lesson-prose h3{margin-top:1.25rem;font-size:1.125rem;font-weight:600}.lesson-prose h4{margin-top:1rem;font-size:1rem;font-weight:600}.lesson-prose p{margin-top:.75rem;line-height:1.65}.lesson-prose ul,.lesson-prose ol{margin-top:.75rem;margin-left:1.5rem}.lesson-prose ul{list-style:disc}.lesson-prose ol{list-style:decimal}.lesson-prose li{margin-top:.25rem;line-height:1.6}.lesson-prose a{color:var(--forest);text-decoration:underline}.lesson-prose code{background:#faf5eb;padding:.125rem .3rem;border-radius:.25rem;font-size:.875em}.lesson-prose pre{margin-top:1rem;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:.5rem;font-size:.875em;overflow:auto;line-height:1.5}.lesson-prose pre code{background:transparent;padding:0;color:inherit}.lesson-prose blockquote{margin-top:1rem;padding:.75rem 1rem;border-left:4px solid var(--forest);background:#faf5eb;font-style:italic;border-radius:0 .25rem .25rem 0}.lesson-prose img{margin-top:1rem;border-radius:.375rem;max-width:100%}.lesson-prose hr{margin:2rem 0;border:0;border-top:1px solid #E5E7EB}.lesson-prose table{margin-top:1rem;width:100%;border-collapse:collapse;font-size:.875rem}.lesson-prose th,.lesson-prose td{border:1px solid #E5E7EB;padding:.5rem .75rem;text-align:left}.lesson-prose th{background:#faf5eb;font-weight:600}.lesson-prose strong{font-weight:600;color:#1f2937}
+</style>
+</head>
+
+<body class="min-h-screen">
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+    <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script>
+    <script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+    <header class="border-b bg-white">
+        <div class="mx-auto max-w-3xl px-4 pb-4">
+            <h1 class="text-2xl font-bold text-[var(--forest)]">Chuẩn bị · Cài công cụ (Antigravity IDE)</h1>
+            <p class="mt-1 text-sm text-gray-600">Tải và cài đặt Antigravity IDE để bắt đầu khoá AI Blackboard.</p>
+        </div>
+    </header>
+    <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+    <astro-island uid="1y7AGc" prefix="r3" component-url="/_astro/lesson-renderer.nQ0UN1Rd.js" component-export="LessonRenderer" renderer-url="/_astro/client.DTojXMD-.js" props="{&quot;classId&quot;:[0,&quot;102&quot;],&quot;lessonId&quot;:[0,&quot;120&quot;],&quot;content&quot;:[0,{&quot;steps&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;intro&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Antigravity IDE — công cụ chính của khoá học&quot;],&quot;body&quot;:[0,&quot;Trong khoá **AI Blackboard**, chúng ta lập trình cùng AI ngay trong **Antigravity IDE** — môi trường phát triển tích hợp agent của Google.\n\nTrang tải chính thức: **https://antigravity.google/download**\n\n&gt; ⚠️ **Chỉ cài đặt Antigravity IDE.** Trong lúc tải và cài, hãy bỏ qua mọi thành phần, tiện ích mở rộng hay phần mềm bổ sung được gợi ý — khoá học chưa cần đến.&quot;],&quot;callout&quot;:[0,&quot;Mục tiêu phần này: tải và cài đặt thành công Antigravity IDE trên máy của bạn.&quot;]}],[0,{&quot;id&quot;:[0,&quot;buoc-1-tai&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 1 — Tải Antigravity IDE&quot;],&quot;body&quot;:[0,&quot;1. Mở trình duyệt và truy cập **https://antigravity.google/download**.\n2. Chọn đúng hệ điều hành của bạn: **Windows**, **macOS** (Apple Silicon hoặc Intel), hoặc **Linux**.\n3. Nhấn nút tải về và chờ file cài đặt tải xong.\n\n`[[ẢNH: trang antigravity.google/download + nút tải theo hệ điều hành]]`&quot;]}],[0,{&quot;id&quot;:[0,&quot;buoc-2-cai&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 2 — Cài đặt (chỉ IDE)&quot;],&quot;body&quot;:[0,&quot;Mở file vừa tải và cài đặt:\n\n- **Windows:** chạy file `.exe`, bấm *Next* qua các bước, giữ lựa chọn mặc định rồi *Install*.\n- **macOS:** mở file `.dmg`, kéo biểu tượng **Antigravity** vào thư mục **Applications**.\n- **Linux:** cài theo gói tải về (`.deb`/`.rpm`/AppImage) đúng bản phân phối của bạn.\n\n&gt; ⚠️ Chỉ cài **Antigravity IDE**. Bỏ qua mọi tuỳ chọn cài thêm tiện ích/phần mềm khác.\n\n`[[ẢNH: các bước trình cài đặt — chỉ chọn IDE]]`&quot;]}],[0,{&quot;id&quot;:[0,&quot;buoc-3-mo&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 3 — Mở Antigravity &amp; đăng nhập&quot;],&quot;body&quot;:[0,&quot;1. Mở **Antigravity IDE** vừa cài.\n2. Đăng nhập bằng tài khoản **Google** của bạn khi được yêu cầu.\n3. Hoàn tất các bước khởi tạo tối thiểu để vào giao diện chính.\n\nKhi mở được giao diện chính của Antigravity là bạn đã sẵn sàng cho buổi học đầu tiên.\n\n`[[ẢNH: giao diện chính Antigravity sau khi đăng nhập]]`&quot;]}],[0,{&quot;id&quot;:[0,&quot;ack&quot;],&quot;type&quot;:[0,&quot;acknowledge&quot;],&quot;body&quot;:[0,&quot;Bạn đã tải và cài đặt thành công Antigravity IDE? Tick xác nhận để hoàn thành phần chuẩn bị và mở khoá bài học tiếp theo.&quot;],&quot;checkboxLabel&quot;:[0,&quot;Tôi đã cài đặt xong Antigravity IDE&quot;]}]]]}],&quot;initialAnswers&quot;:[0,{&quot;ack&quot;:[0,&quot;yes&quot;]}],&quot;isSubmitted&quot;:[0,true],&quot;nextLessonSlug&quot;:[0,&quot;slide-buoi-zoom-1&quot;],&quot;classSlug&quot;:[0,&quot;ai-blackboard-2026&quot;],&quot;preview&quot;:[0,false],&quot;chatMode&quot;:[0,false]}" client="load" opts="{&quot;name&quot;:&quot;LessonRenderer&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="mx-auto max-w-3xl space-y-5 p-4">
+            <div id="intro" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Antigravity IDE — công cụ chính của khoá học</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Trong khoá <strong>AI Blackboard</strong>, chúng ta lập trình cùng AI ngay trong <strong>Antigravity IDE</strong> — môi trường phát triển tích hợp agent của Google.</p>
+                        <p>Trang tải chính thức: <strong><a href="https://antigravity.google/download">https://antigravity.google/download</a></strong></p>
+                        <blockquote>
+                            <p>⚠️ <strong>Chỉ cài đặt Antigravity IDE.</strong> Trong lúc tải và cài, hãy bỏ qua mọi thành phần, tiện ích mở rộng hay phần mềm bổ sung được gợi ý — khoá học chưa cần đến.</p>
+                        </blockquote>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Mục tiêu phần này: tải và cài đặt thành công Antigravity IDE trên máy của bạn.</blockquote>
+                </section>
+            </div>
+            <div id="buoc-1-tai" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 1 — Tải Antigravity IDE</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <ol>
+                            <li>Mở trình duyệt và truy cập <strong><a href="https://antigravity.google/download">https://antigravity.google/download</a></strong>.</li>
+                            <li>Chọn đúng hệ điều hành của bạn: <strong>Windows</strong>, <strong>macOS</strong> (Apple Silicon hoặc Intel), hoặc <strong>Linux</strong>.</li>
+                            <li>Nhấn nút tải về và chờ file cài đặt tải xong.</li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+            <div id="buoc-2-cai" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 2 — Cài đặt (chỉ IDE)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Mở file vừa tải và cài đặt:</p>
+                        <ul>
+                            <li><strong>Windows:</strong> chạy file <code>.exe</code>, bấm <em>Next</em> qua các bước, giữ lựa chọn mặc định rồi <em>Install</em>.</li>
+                            <li><strong>macOS:</strong> mở file <code>.dmg</code>, kéo biểu tượng <strong>Antigravity</strong> vào thư mục <strong>Applications</strong>.</li>
+                            <li><strong>Linux:</strong> cài theo gói tải về (<code>.deb</code>/<code>.rpm</code>/AppImage) đúng bản phân phối của bạn.</li>
+                        </ul>
+                        <blockquote>
+                            <p>⚠️ Chỉ cài <strong>Antigravity IDE</strong>. Bỏ qua mọi tuỳ chọn cài thêm tiện ích/phần mềm khác.</p>
+                        </blockquote>
+                    </div>
+                </section>
+            </div>
+            <div id="buoc-3-mo" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 3 — Mở Antigravity &amp; đăng nhập</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <ol>
+                            <li>Mở <strong>Antigravity IDE</strong> vừa cài.</li>
+                            <li>Đăng nhập bằng tài khoản <strong>Google</strong> của bạn khi được yêu cầu.</li>
+                            <li>Hoàn tất các bước khởi tạo tối thiểu để vào giao diện chính.</li>
+                        </ol>
+                        <p>Khi mở được giao diện chính của Antigravity là bạn đã sẵn sàng cho buổi học đầu tiên.</p>
+                    </div>
+                </section>
+            </div>
+            <div></div>
+        </div>
+    </astro-island>
+    <astro-island uid="Z29fhHP" prefix="r5" component-url="/_astro/help-bell-widget.Bki928HK.js" component-export="HelpBellWidget" renderer-url="/_astro/client.DTojXMD-.js" props="{}" client="idle" opts="{&quot;name&quot;:&quot;HelpBellWidget&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="fixed bottom-5 right-5 z-40 print:hidden"><button type="button" aria-label="Cần trợ giúp" aria-expanded="false" class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                    <path d="M12 2a1 1 0 0 1 1 1v.6a6 6 0 0 1 5 5.9v3.2l1.7 2.6a1 1 0 0 1-.84 1.55H5.14a1 1 0 0 1-.84-1.55L6 12.7V9.5a6 6 0 0 1 5-5.9V3a1 1 0 0 1 1-1Zm0 20a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22Z"></path>
+                </svg></button></div>
+    </astro-island>
+</body>
+
+</html>

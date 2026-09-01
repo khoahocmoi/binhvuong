@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0070)https://hoc.binhvuong.vn/learn/ai-blackboard-2026/buoi-1-phan-1-mo-dau -->
+<html lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f2e8">
+    <meta name="description" content="Hệ thống học tập trực tuyến của Bình Vương">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-2.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="https://hoc.binhvuong.vn/favicon.png">
+    <link rel="apple-touch-icon" href="https://hoc.binhvuong.vn/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./static/css2" rel="stylesheet">
+    <title>Buổi 1 · Phần 1 — Bắt đầu từ đâu</title>
+    <link rel="manifest" href="https://hoc.binhvuong.vn/manifest.webmanifest">
+    <link rel="stylesheet" href="./static/base-layout.DrM8jPi6.css">
+    <style>.lesson-prose h1{margin-top:1.5rem;font-size:1.75rem;font-weight:700;color:var(--forest)}.lesson-prose h2{margin-top:1.5rem;font-size:1.375rem;font-weight:600;color:var(--forest)}.lesson-prose h3{margin-top:1.25rem;font-size:1.125rem;font-weight:600}.lesson-prose h4{margin-top:1rem;font-size:1rem;font-weight:600}.lesson-prose p{margin-top:.75rem;line-height:1.65}.lesson-prose ul,.lesson-prose ol{margin-top:.75rem;margin-left:1.5rem}.lesson-prose ul{list-style:disc}.lesson-prose ol{list-style:decimal}.lesson-prose li{margin-top:.25rem;line-height:1.6}.lesson-prose a{color:var(--forest);text-decoration:underline}.lesson-prose code{background:#faf5eb;padding:.125rem .3rem;border-radius:.25rem;font-size:.875em}.lesson-prose pre{margin-top:1rem;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:.5rem;font-size:.875em;overflow:auto;line-height:1.5}.lesson-prose pre code{background:transparent;padding:0;color:inherit}.lesson-prose blockquote{margin-top:1rem;padding:.75rem 1rem;border-left:4px solid var(--forest);background:#faf5eb;font-style:italic;border-radius:0 .25rem .25rem 0}.lesson-prose img{margin-top:1rem;border-radius:.375rem;max-width:100%}.lesson-prose hr{margin:2rem 0;border:0;border-top:1px solid #E5E7EB}.lesson-prose table{margin-top:1rem;width:100%;border-collapse:collapse;font-size:.875rem}.lesson-prose th,.lesson-prose td{border:1px solid #E5E7EB;padding:.5rem .75rem;text-align:left}.lesson-prose th{background:#faf5eb;font-weight:600}.lesson-prose strong{font-weight:600;color:#1f2937}
+</style>
+</head>
+
+<body class="min-h-screen">
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+    <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script>
+    <script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+    <header class="border-b bg-white">
+        <div class="mx-auto max-w-3xl px-4 pb-4">
+            <h1 class="text-2xl font-bold text-[var(--forest)]">Buổi 1 · Phần 1 — Bắt đầu từ đâu</h1>
+            <p class="mt-1 text-sm text-gray-600">Niềm tin cốt lõi, gỡ ba nỗi sợ, showcase và định vị kỳ vọng.</p>
+        </div>
+    </header>
+    <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+    <astro-island uid="Z1XjFVp" prefix="r3" component-url="/_astro/lesson-renderer.nQ0UN1Rd.js" component-export="LessonRenderer" renderer-url="/_astro/client.DTojXMD-.js" props="{&quot;classId&quot;:[0,&quot;102&quot;],&quot;lessonId&quot;:[0,&quot;121&quot;],&quot;content&quot;:[0,{&quot;steps&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;p1-s1&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Một câu hỏi trước khi bắt đầu&quot;],&quot;body&quot;:[0,&quot;Bạn đã từng ước điều gì đó kiểu này chưa: *\&quot;Giá mà có ai đó **làm hộ** cái landing page, chứ không phải chỉ **chỉ tôi cách làm**\&quot;*?\n\nNếu có, thì buổi hôm nay là dành cho bạn. Vì đó chính xác là ranh giới giữa cách bạn **đang** dùng AI và cách bạn **sắp** học.&quot;]}],[0,{&quot;id&quot;:[0,&quot;p1-s2&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Niềm tin cốt lõi của cả khoá&quot;],&quot;body&quot;:[0,&quot;Tôi muốn cài vào đầu bạn một câu duy nhất. Nếu bạn tin câu này, mọi thứ còn lại trong ba buổi sẽ tự khắc theo sau. Đọc tới đâu thấy khó, cứ quay lại câu này.&quot;],&quot;callout&quot;:[0,&quot;AI ngày nay không chỉ biết trả lời. Nó biết làm. Và bạn không cần biết code để sai bảo nó — bạn chỉ cần biết mô tả việc cho rõ và kiểm tra lại kết quả.&quot;]}],[0,{&quot;id&quot;:[0,&quot;p1-s3&quot;],&quot;type&quot;:[0,&quot;mindset-cards&quot;],&quot;cards&quot;:[1,[[0,{&quot;label&quot;:[0,&quot;\&quot;Tôi không biết lập trình nên không làm được\&quot;&quot;],&quot;equals&quot;:[0,&quot;Sai — bạn viết YÊU CẦU, không viết code&quot;],&quot;description&quot;:[0,&quot;Như thuê thợ xây nhà: bạn không cần biết xây, chỉ cần biết mình muốn căn nhà thế nào và kiểm tra thợ làm đúng không. AI là thợ. Bạn là chủ nhà.&quot;]}],[0,{&quot;label&quot;:[0,&quot;\&quot;Node.js, Python, terminal… nghe là nản\&quot;&quot;],&quot;equals&quot;:[0,&quot;Sai — bạn nhờ chính AI cài và lo hết&quot;],&quot;description&quot;:[0,&quot;Bạn không phải học chúng. Phần 3 cho bạn đúng một câu lệnh copy-dán. Bạn chỉ cần biết mặt tên, không cần hiểu ruột.&quot;]}],[0,{&quot;label&quot;:[0,&quot;\&quot;Tôi dùng ChatGPT rồi, chắc cũng vậy thôi\&quot;&quot;],&quot;equals&quot;:[0,&quot;Sai — đó mới là 10%&quot;],&quot;description&quot;:[0,&quot;Niềm tin nguy hiểm nhất vì khiến bạn dừng quá sớm. 90% còn lại — để AI mở dự án, sửa file, dựng sản phẩm, tự sửa lỗi — bạn chưa chạm tới. Buổi nay ta chạm.&quot;]}]]]}],[0,{&quot;id&quot;:[0,&quot;p1-s4&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Showcase: bạn sắp làm được gì&quot;],&quot;body&quot;:[0,&quot;Để bạn tin, tôi cho bạn thấy đích đến trước. Đây là những thứ một AI Agent dựng được — hết ba buổi, bạn sẽ tự tay điều khiển nó làm:\n\n- **Landing page bán hàng**: bạn tả offer, agent dựng nguyên trang HTML có hero, lợi ích, form đăng ký, nút kêu gọi hành động — mở trên điện thoại đọc mượt.\n- **Bộ slide bài giảng**: đưa outline, agent trả về slide HTML trình chiếu được ngay.\n- **Video giới thiệu ngắn**: từ một kịch bản, agent dựng video bằng code (Remotion) — không cần biết dựng phim.\n- **Một dây chuyền tự động**: khách điền form → tự ghi Google Sheet → tự gửi email xác nhận → tự tạo việc chăm sóc. Bạn ngủ, nó vẫn chạy.&quot;],&quot;callout&quot;:[0,&quot;Hôm qua bạn copy từng đoạn chữ rồi tự ghép tay. Sau khoá này bạn giao cả chuỗi việc cho một cộng sự biết tự dựng, tự chạy, tự báo lại.&quot;]}],[0,{&quot;id&quot;:[0,&quot;p1-s5&quot;],&quot;type&quot;:[0,&quot;mindset-cards&quot;],&quot;cards&quot;:[1,[[0,{&quot;label&quot;:[0,&quot;KHÔNG phải khoá lập trình để thành dev&quot;],&quot;equals&quot;:[0,&quot;LÀ khoá dùng AI Agent cho automation kỹ thuật nhẹ&quot;]}],[0,{&quot;label&quot;:[0,&quot;KHÔNG phải khoá sưu tầm prompt hay ho&quot;],&quot;equals&quot;:[0,&quot;LÀ khoá biến công việc thành quy trình chạy được&quot;]}],[0,{&quot;label&quot;:[0,&quot;KHÔNG phải học xong có kết quả xài một lần&quot;],&quot;equals&quot;:[0,&quot;LÀ học xong có một CÁCH LÀM dùng lại mãi&quot;]}]]]}],[0,{&quot;id&quot;:[0,&quot;p1-s6&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Đích của hôm nay&quot;],&quot;body&quot;:[0,&quot;Lời hứa cụ thể: hết ba buổi, bạn có một **capstone** gắn với việc thật — landing page + thanh toán + follow-up — cùng quy trình bạn tự lặp lại được.&quot;],&quot;callout&quot;:[0,&quot;Riêng buổi 1: hiểu đúng bản chất, chuẩn bị xong môi trường, và viết được bản thiết kế công việc đầu tiên (workflow spec). Nhà cao tới đâu cũng bắt đầu từ nền móng này.&quot;]}],[0,{&quot;id&quot;:[0,&quot;p1-s7&quot;],&quot;type&quot;:[0,&quot;question&quot;],&quot;question&quot;:[0,{&quot;id&quot;:[0,&quot;p1-q1&quot;],&quot;type&quot;:[0,&quot;single-choice&quot;],&quot;prompt&quot;:[0,&quot;Khác biệt cốt lõi mà buổi hôm nay muốn bạn nắm là gì?&quot;],&quot;options&quot;:[1,[[0,{&quot;value&quot;:[0,&quot;a&quot;],&quot;label&quot;:[0,&quot;AI biết trả lời câu hỏi nhanh hơn&quot;]}],[0,{&quot;value&quot;:[0,&quot;b&quot;],&quot;label&quot;:[0,&quot;AI không chỉ biết trả lời mà biết LÀM — và bạn không cần code để sai nó&quot;]}],[0,{&quot;value&quot;:[0,&quot;c&quot;],&quot;label&quot;:[0,&quot;Phải học lập trình mới dùng được AI&quot;]}]]],&quot;correctValue&quot;:[0,&quot;b&quot;],&quot;wrongHint&quot;:[0,&quot;Quay lại niềm tin cốt lõi: AI biết LÀM, và bạn chỉ cần mô tả việc cho rõ.&quot;]}]}],[0,{&quot;id&quot;:[0,&quot;p1-s8&quot;],&quot;type&quot;:[0,&quot;acknowledge&quot;],&quot;body&quot;:[0,&quot;Bạn vừa có niềm tin cốt lõi, gỡ ba nỗi sợ, thấy đích đến và định vị đúng kỳ vọng.&quot;],&quot;checkboxLabel&quot;:[0,&quot;Tôi đã hiểu Phần 1 và sẵn sàng đi tiếp&quot;]}]]],&quot;meta&quot;:[0,{&quot;chatMode&quot;:[0,true]}]}],&quot;initialAnswers&quot;:[0,{&quot;p1-q1&quot;:[0,&quot;b&quot;],&quot;p1-s8&quot;:[0,&quot;yes&quot;]}],&quot;isSubmitted&quot;:[0,true],&quot;nextLessonSlug&quot;:[0,&quot;buoi-1-phan-2-khai-niem&quot;],&quot;classSlug&quot;:[0,&quot;ai-blackboard-2026&quot;],&quot;preview&quot;:[0,false],&quot;chatMode&quot;:[0,true]}" client="load" opts="{&quot;name&quot;:&quot;LessonRenderer&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="mx-auto max-w-3xl space-y-5 p-4">
+            <div id="p1-s1" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Một câu hỏi trước khi bắt đầu</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Bạn đã từng ước điều gì đó kiểu này chưa: <em>"Giá mà có ai đó <strong>làm hộ</strong> cái landing page, chứ không phải chỉ <strong>chỉ tôi cách làm</strong>"</em>?</p>
+                        <p>Nếu có, thì buổi hôm nay là dành cho bạn. Vì đó chính xác là ranh giới giữa cách bạn <strong>đang</strong> dùng AI và cách bạn <strong>sắp</strong> học.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="p1-s2" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Niềm tin cốt lõi của cả khoá</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Tôi muốn cài vào đầu bạn một câu duy nhất. Nếu bạn tin câu này, mọi thứ còn lại trong ba buổi sẽ tự khắc theo sau. Đọc tới đâu thấy khó, cứ quay lại câu này.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">AI ngày nay không chỉ biết trả lời. Nó biết làm. Và bạn không cần biết code để sai bảo nó — bạn chỉ cần biết mô tả việc cho rõ và kiểm tra lại kết quả.</blockquote>
+                </section>
+            </div>
+            <div id="p1-s3" class="scroll-mt-16">
+                <section class="grid gap-3 md:grid-cols-3">
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">"Tôi không biết lập trình nên không làm được"</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Sai — bạn viết YÊU CẦU, không viết code</div>
+                        <p class="mt-2 text-sm text-gray-600">Như thuê thợ xây nhà: bạn không cần biết xây, chỉ cần biết mình muốn căn nhà thế nào và kiểm tra thợ làm đúng không. AI là thợ. Bạn là chủ nhà.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">"Node.js, Python, terminal… nghe là nản"</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Sai — bạn nhờ chính AI cài và lo hết</div>
+                        <p class="mt-2 text-sm text-gray-600">Bạn không phải học chúng. Phần 3 cho bạn đúng một câu lệnh copy-dán. Bạn chỉ cần biết mặt tên, không cần hiểu ruột.</p>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">"Tôi dùng ChatGPT rồi, chắc cũng vậy thôi"</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">Sai — đó mới là 10%</div>
+                        <p class="mt-2 text-sm text-gray-600">Niềm tin nguy hiểm nhất vì khiến bạn dừng quá sớm. 90% còn lại — để AI mở dự án, sửa file, dựng sản phẩm, tự sửa lỗi — bạn chưa chạm tới. Buổi nay ta chạm.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="p1-s4" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Showcase: bạn sắp làm được gì</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Để bạn tin, tôi cho bạn thấy đích đến trước. Đây là những thứ một AI Agent dựng được — hết ba buổi, bạn sẽ tự tay điều khiển nó làm:</p>
+                        <ul>
+                            <li><strong>Landing page bán hàng</strong>: bạn tả offer, agent dựng nguyên trang HTML có hero, lợi ích, form đăng ký, nút kêu gọi hành động — mở trên điện thoại đọc mượt.</li>
+                            <li><strong>Bộ slide bài giảng</strong>: đưa outline, agent trả về slide HTML trình chiếu được ngay.</li>
+                            <li><strong>Video giới thiệu ngắn</strong>: từ một kịch bản, agent dựng video bằng code (Remotion) — không cần biết dựng phim.</li>
+                            <li><strong>Một dây chuyền tự động</strong>: khách điền form → tự ghi Google Sheet → tự gửi email xác nhận → tự tạo việc chăm sóc. Bạn ngủ, nó vẫn chạy.</li>
+                        </ul>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Hôm qua bạn copy từng đoạn chữ rồi tự ghép tay. Sau khoá này bạn giao cả chuỗi việc cho một cộng sự biết tự dựng, tự chạy, tự báo lại.</blockquote>
+                </section>
+            </div>
+            <div id="p1-s5" class="scroll-mt-16">
+                <section class="grid gap-3 md:grid-cols-3">
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">KHÔNG phải khoá lập trình để thành dev</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">LÀ khoá dùng AI Agent cho automation kỹ thuật nhẹ</div>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">KHÔNG phải khoá sưu tầm prompt hay ho</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">LÀ khoá biến công việc thành quy trình chạy được</div>
+                    </div>
+                    <div class="rounded-lg border border-[var(--forest)]/20 bg-white p-4 shadow-sm">
+                        <div class="text-sm font-semibold text-[var(--forest)]">KHÔNG phải học xong có kết quả xài một lần</div>
+                        <div class="mt-1 text-xl font-bold text-gray-900">LÀ học xong có một CÁCH LÀM dùng lại mãi</div>
+                    </div>
+                </section>
+            </div>
+            <div id="p1-s6" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Đích của hôm nay</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Lời hứa cụ thể: hết ba buổi, bạn có một <strong>capstone</strong> gắn với việc thật — landing page + thanh toán + follow-up — cùng quy trình bạn tự lặp lại được.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Riêng buổi 1: hiểu đúng bản chất, chuẩn bị xong môi trường, và viết được bản thiết kế công việc đầu tiên (workflow spec). Nhà cao tới đâu cũng bắt đầu từ nền móng này.</blockquote>
+                </section>
+            </div>
+            <div></div>
+        </div>
+    </astro-island>
+    <astro-island uid="Z29fhHP" prefix="r5" component-url="/_astro/help-bell-widget.Bki928HK.js" component-export="HelpBellWidget" renderer-url="/_astro/client.DTojXMD-.js" props="{}" client="idle" opts="{&quot;name&quot;:&quot;HelpBellWidget&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="fixed bottom-5 right-5 z-40 print:hidden"><button type="button" aria-label="Cần trợ giúp" aria-expanded="false" class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                    <path d="M12 2a1 1 0 0 1 1 1v.6a6 6 0 0 1 5 5.9v3.2l1.7 2.6a1 1 0 0 1-.84 1.55H5.14a1 1 0 0 1-.84-1.55L6 12.7V9.5a6 6 0 0 1 5-5.9V3a1 1 0 0 1 1-1Zm0 20a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22Z"></path>
+                </svg></button></div>
+    </astro-island>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://hoc.binhvuong.vn/learn/ai-blackboard-2026/bonus-ak-dev-workflow-skills -->
+<html lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f2e8">
+    <meta name="description" content="Hệ thống học tập trực tuyến của Bình Vương">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-2.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="https://hoc.binhvuong.vn/favicon.png">
+    <link rel="apple-touch-icon" href="https://hoc.binhvuong.vn/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./static/css2" rel="stylesheet">
+    <title>Bonus: 6 Skill Workflow Dev — từ Brainstorm tới Fix</title>
+    <link rel="manifest" href="https://hoc.binhvuong.vn/manifest.webmanifest">
+    <link rel="stylesheet" href="./static/base-layout.DrM8jPi6.css">
+    <style>.lesson-prose h1{margin-top:1.5rem;font-size:1.75rem;font-weight:700;color:var(--forest)}.lesson-prose h2{margin-top:1.5rem;font-size:1.375rem;font-weight:600;color:var(--forest)}.lesson-prose h3{margin-top:1.25rem;font-size:1.125rem;font-weight:600}.lesson-prose h4{margin-top:1rem;font-size:1rem;font-weight:600}.lesson-prose p{margin-top:.75rem;line-height:1.65}.lesson-prose ul,.lesson-prose ol{margin-top:.75rem;margin-left:1.5rem}.lesson-prose ul{list-style:disc}.lesson-prose ol{list-style:decimal}.lesson-prose li{margin-top:.25rem;line-height:1.6}.lesson-prose a{color:var(--forest);text-decoration:underline}.lesson-prose code{background:#faf5eb;padding:.125rem .3rem;border-radius:.25rem;font-size:.875em}.lesson-prose pre{margin-top:1rem;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:.5rem;font-size:.875em;overflow:auto;line-height:1.5}.lesson-prose pre code{background:transparent;padding:0;color:inherit}.lesson-prose blockquote{margin-top:1rem;padding:.75rem 1rem;border-left:4px solid var(--forest);background:#faf5eb;font-style:italic;border-radius:0 .25rem .25rem 0}.lesson-prose img{margin-top:1rem;border-radius:.375rem;max-width:100%}.lesson-prose hr{margin:2rem 0;border:0;border-top:1px solid #E5E7EB}.lesson-prose table{margin-top:1rem;width:100%;border-collapse:collapse;font-size:.875rem}.lesson-prose th,.lesson-prose td{border:1px solid #E5E7EB;padding:.5rem .75rem;text-align:left}.lesson-prose th{background:#faf5eb;font-weight:600}.lesson-prose strong{font-weight:600;color:#1f2937}
+</style>
+</head>
+
+<body class="min-h-screen">
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+    <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script>
+    <script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+    <header class="border-b bg-white">
+        <div class="mx-auto max-w-3xl px-4 pb-4">
+            <h1 class="text-2xl font-bold text-[var(--forest)]">Bonus: 6 Skill Workflow Dev — từ Brainstorm tới Fix</h1>
+            <p class="mt-1 text-sm text-gray-600">Bộ 6 skill /ak đóng gói vòng đời làm phần mềm cùng AI Agent: brainstorm → plan → cook → test → code-review → fix. Tải, cài, dùng.</p>
+        </div>
+    </header>
+    <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+    <astro-island uid="Z1VgcAQ" prefix="r3" component-url="/_astro/lesson-renderer.nQ0UN1Rd.js" component-export="LessonRenderer" renderer-url="/_astro/client.DTojXMD-.js" props="{&quot;classId&quot;:[0,&quot;102&quot;],&quot;lessonId&quot;:[0,&quot;160&quot;],&quot;content&quot;:[0,{&quot;steps&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;gioi-thieu&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;🎁 Bonus: Bộ 6 Skill Workflow Dev cho AI Agent&quot;],&quot;body&quot;:[0,&quot;Xuyên suốt khoá, bạn học cách **giao việc bài bản** cho AI Agent thay vì hỏi bừa. Đây là bộ **6 skill `/ak` hoàn chỉnh** đóng gói đúng vòng đời làm phần mềm cùng AI — từ lúc **bàn ý tưởng** tới lúc **sửa lỗi**.\n\nTải về, nạp vào Agent (Claude Code) là dùng được ngay. Cũng là bộ khung mẫu để bạn tự thiết kế workflow của riêng mình.&quot;],&quot;callout&quot;:[0,&quot;Không cần giỏi code. Chỉ cần hiểu THỨ TỰ các bước và giao đúng việc cho Agent.&quot;]}],[0,{&quot;id&quot;:[0,&quot;workflow&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;🧭 Thứ tự dùng (workflow chuẩn)&quot;],&quot;body&quot;:[0,&quot;| Bước | Skill | Dùng khi |\n|---|---|---|\n| 1 | `/ak:brainstorm` | Bàn ý tưởng, cân nhắc phương án **trước khi** code |\n| 2 | `/ak:plan` | Chốt phương án → chia kế hoạch từng phase |\n| 3 | `/ak:cook` | Thực thi kế hoạch — viết code thật |\n| 4 | `/ak:test` | Chạy test, kiểm tra hành vi |\n| 5 | `/ak:code-review` | Soát chất lượng, bảo mật trước khi merge |\n| 6 | `/ak:fix` | Có bug → tự chẩn đoán rồi vá |\n\nChuỗi điển hình: **brainstorm → plan → cook → test → code-review**, gặp lỗi thì **fix**.&quot;]}],[0,{&quot;id&quot;:[0,&quot;tai-ve&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;⬇️ Bước 1 — Tải bộ skill&quot;],&quot;body&quot;:[0,&quot;**[👉 Bấm để tải bộ skill (.zip)](https://hoc.binhvuong.vn/downloads/ak-dev-workflow-skills.zip)**\n\nFile nhẹ (~136KB), gồm 6 thư mục skill + `README.md` hướng dẫn workflow. Mỗi skill có `SKILL.md` mô tả quy tắc + quy trình để bạn đọc hiểu cách Agent được điều phối.&quot;]}],[0,{&quot;id&quot;:[0,&quot;cai-dat&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;📦 Bước 2 — Cài đặt (một lần)&quot;],&quot;body&quot;:[0,&quot;1. Giải nén file `.zip`.\n2. Chép **6 thư mục** `ak-brainstorm`, `ak-plan`, `ak-cook`, `ak-test`, `ak-code-review`, `ak-fix` vào kho skill của Claude Code:\n\n```\n~/.claude/skills/\n```\n\n3. Mở lại Claude Code — các skill sẽ sẵn sàng gọi bằng lệnh gạch chéo.&quot;]}],[0,{&quot;id&quot;:[0,&quot;su-dung&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;▶️ Bước 3 — Dùng&quot;],&quot;body&quot;:[0,&quot;Gõ lệnh tương ứng với việc bạn đang làm, ví dụ:\n\n- `/ak:brainstorm` — khi muốn bàn ý tưởng, cân nhắc phương án.\n- `/ak:plan` — khi đã chốt hướng, cần kế hoạch chi tiết.\n- `/ak:cook` — khi muốn Agent thực thi kế hoạch.\n- `/ak:fix` — khi có lỗi cần sửa.\n\n&gt; Mẹo: đọc `SKILL.md` trong mỗi thư mục để hiểu Agent sẽ làm gì ở từng bước — đó chính là tư duy \&quot;giao việc\&quot; mà khoá học nhấn mạnh.&quot;]}],[0,{&quot;id&quot;:[0,&quot;hoan-thanh&quot;],&quot;type&quot;:[0,&quot;acknowledge&quot;],&quot;body&quot;:[0,&quot;Bạn đã tải bộ skill và chép 6 thư mục vào `~/.claude/skills/` chưa?&quot;],&quot;checkboxLabel&quot;:[0,&quot;Tôi đã tải và cài bộ 6 skill workflow dev&quot;]}]]],&quot;meta&quot;:[0,{&quot;alwaysUnlocked&quot;:[0,true]}]}],&quot;initialAnswers&quot;:[0,{}],&quot;isSubmitted&quot;:[0,true],&quot;nextLessonSlug&quot;:[0,null],&quot;classSlug&quot;:[0,&quot;ai-blackboard-2026&quot;],&quot;preview&quot;:[0,false],&quot;chatMode&quot;:[0,false]}" client="load" opts="{&quot;name&quot;:&quot;LessonRenderer&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="mx-auto max-w-3xl space-y-5 p-4">
+            <div id="gioi-thieu" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">🎁 Bonus: Bộ 6 Skill Workflow Dev cho AI Agent</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Xuyên suốt khoá, bạn học cách <strong>giao việc bài bản</strong> cho AI Agent thay vì hỏi bừa. Đây là bộ <strong>6 skill <code>/ak</code> hoàn chỉnh</strong> đóng gói đúng vòng đời làm phần mềm cùng AI — từ lúc <strong>bàn ý tưởng</strong> tới lúc <strong>sửa lỗi</strong>.</p>
+                        <p>Tải về, nạp vào Agent (Claude Code) là dùng được ngay. Cũng là bộ khung mẫu để bạn tự thiết kế workflow của riêng mình.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Không cần giỏi code. Chỉ cần hiểu THỨ TỰ các bước và giao đúng việc cho Agent.</blockquote>
+                </section>
+            </div>
+            <div id="workflow" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">🧭 Thứ tự dùng (workflow chuẩn)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Bước</th>
+                                    <th>Skill</th>
+                                    <th>Dùng khi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><code>/ak:brainstorm</code></td>
+                                    <td>Bàn ý tưởng, cân nhắc phương án <strong>trước khi</strong> code</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><code>/ak:plan</code></td>
+                                    <td>Chốt phương án → chia kế hoạch từng phase</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td><code>/ak:cook</code></td>
+                                    <td>Thực thi kế hoạch — viết code thật</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td><code>/ak:test</code></td>
+                                    <td>Chạy test, kiểm tra hành vi</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td><code>/ak:code-review</code></td>
+                                    <td>Soát chất lượng, bảo mật trước khi merge</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td><code>/ak:fix</code></td>
+                                    <td>Có bug → tự chẩn đoán rồi vá</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Chuỗi điển hình: <strong>brainstorm → plan → cook → test → code-review</strong>, gặp lỗi thì <strong>fix</strong>.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="tai-ve" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">⬇️ Bước 1 — Tải bộ skill</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>File nhẹ (~136KB), gồm 6 thư mục skill + <code>README.md</code> hướng dẫn workflow. Mỗi skill có <code>SKILL.md</code> mô tả quy tắc + quy trình để bạn đọc hiểu cách Agent được điều phối.</p>
+                    </div>
+                </section>
+            </div>
+            <div id="cai-dat" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">📦 Bước 2 — Cài đặt (một lần)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <ol>
+                            <li>Giải nén file <code>.zip</code>.</li>
+                            <li>Chép <strong>6 thư mục</strong> <code>ak-brainstorm</code>, <code>ak-plan</code>, <code>ak-cook</code>, <code>ak-test</code>, <code>ak-code-review</code>, <code>ak-fix</code> vào kho skill của Claude Code:</li>
+                        </ol>
+                        <pre data-copy-ready="1" style="position: relative;"><code>~/.claude/skills/
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <ol>
+                            <li>Mở lại Claude Code — các skill sẽ sẵn sàng gọi bằng lệnh gạch chéo.</li>
+                        </ol>
+                    </div>
+                </section>
+            </div>
+            <div id="su-dung" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">▶️ Bước 3 — Dùng</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Gõ lệnh tương ứng với việc bạn đang làm, ví dụ:</p>
+                        <ul>
+                            <li><code>/ak:brainstorm</code> — khi muốn bàn ý tưởng, cân nhắc phương án.</li>
+                            <li><code>/ak:plan</code> — khi đã chốt hướng, cần kế hoạch chi tiết.</li>
+                            <li><code>/ak:cook</code> — khi muốn Agent thực thi kế hoạch.</li>
+                            <li><code>/ak:fix</code> — khi có lỗi cần sửa.</li>
+                        </ul>
+                        <blockquote>
+                            <p>Mẹo: đọc <code>SKILL.md</code> trong mỗi thư mục để hiểu Agent sẽ làm gì ở từng bước — đó chính là tư duy "giao việc" mà khoá học nhấn mạnh.</p>
+                        </blockquote>
+                    </div>
+                </section>
+            </div>
+            <div></div>
+        </div>
+    </astro-island>
+    <astro-island uid="Z29fhHP" prefix="r5" component-url="/_astro/help-bell-widget.Bki928HK.js" component-export="HelpBellWidget" renderer-url="/_astro/client.DTojXMD-.js" props="{}" client="idle" opts="{&quot;name&quot;:&quot;HelpBellWidget&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="fixed bottom-5 right-5 z-40 print:hidden"><button type="button" aria-label="Cần trợ giúp" aria-expanded="false" class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                    <path d="M12 2a1 1 0 0 1 1 1v.6a6 6 0 0 1 5 5.9v3.2l1.7 2.6a1 1 0 0 1-.84 1.55H5.14a1 1 0 0 1-.84-1.55L6 12.7V9.5a6 6 0 0 1 5-5.9V3a1 1 0 0 1 1-1Zm0 20a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22Z"></path>
+                </svg></button></div>
+    </astro-island>
+</body>
+
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://hoc.binhvuong.vn/learn/ai-blackboard-2026/bonus-workflow-spec-markdown -->
+<html lang="vi">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#f7f2e8">
+    <meta name="description" content="Hệ thống học tập trực tuyến của Bình Vương">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-2.svg" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/svg+xml" href="https://cdn.binhvuong.vn/i/binhvuong-favicon-dark.svg" media="(prefers-color-scheme: dark)">
+    <link rel="icon" type="image/png" href="https://hoc.binhvuong.vn/favicon.png">
+    <link rel="apple-touch-icon" href="https://hoc.binhvuong.vn/icon-192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./static/css2" rel="stylesheet">
+    <title>Bonus · Viết Workflow Spec bằng Markdown</title>
+    <link rel="manifest" href="https://hoc.binhvuong.vn/manifest.webmanifest">
+    <link rel="stylesheet" href="./static/base-layout.DrM8jPi6.css">
+    <style>.lesson-prose h1{margin-top:1.5rem;font-size:1.75rem;font-weight:700;color:var(--forest)}.lesson-prose h2{margin-top:1.5rem;font-size:1.375rem;font-weight:600;color:var(--forest)}.lesson-prose h3{margin-top:1.25rem;font-size:1.125rem;font-weight:600}.lesson-prose h4{margin-top:1rem;font-size:1rem;font-weight:600}.lesson-prose p{margin-top:.75rem;line-height:1.65}.lesson-prose ul,.lesson-prose ol{margin-top:.75rem;margin-left:1.5rem}.lesson-prose ul{list-style:disc}.lesson-prose ol{list-style:decimal}.lesson-prose li{margin-top:.25rem;line-height:1.6}.lesson-prose a{color:var(--forest);text-decoration:underline}.lesson-prose code{background:#faf5eb;padding:.125rem .3rem;border-radius:.25rem;font-size:.875em}.lesson-prose pre{margin-top:1rem;padding:1rem;background:#1f2937;color:#e5e7eb;border-radius:.5rem;font-size:.875em;overflow:auto;line-height:1.5}.lesson-prose pre code{background:transparent;padding:0;color:inherit}.lesson-prose blockquote{margin-top:1rem;padding:.75rem 1rem;border-left:4px solid var(--forest);background:#faf5eb;font-style:italic;border-radius:0 .25rem .25rem 0}.lesson-prose img{margin-top:1rem;border-radius:.375rem;max-width:100%}.lesson-prose hr{margin:2rem 0;border:0;border-top:1px solid #E5E7EB}.lesson-prose table{margin-top:1rem;width:100%;border-collapse:collapse;font-size:.875rem}.lesson-prose th,.lesson-prose td{border:1px solid #E5E7EB;padding:.5rem .75rem;text-align:left}.lesson-prose th{background:#faf5eb;font-weight:600}.lesson-prose strong{font-weight:600;color:#1f2937}
+</style>
+</head>
+
+<body class="min-h-screen">
+    <style>astro-island,astro-slot,astro-static-slot{display:contents}</style>
+    <script>(()=>{var l=(n,t)=>{let i=async()=>{await(await n())()},e=typeof t.value=="object"?t.value:void 0,s={timeout:e==null?void 0:e.timeout};"requestIdleCallback"in window?window.requestIdleCallback(i,s):setTimeout(i,s.timeout||200)};(self.Astro||(self.Astro={})).idle=l;window.dispatchEvent(new Event("astro:idle"));})();</script>
+    <script>(()=>{var g=Object.defineProperty;var w=(c,s,d)=>s in c?g(c,s,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[s]=d;var l=(c,s,d)=>w(c,typeof s!="symbol"?s+"":s,d);var E=new Set(["__proto__","constructor","prototype"]);{let c={0:t=>y(t),1:t=>d(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(d(t)),5:t=>new Set(d(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>Number.POSITIVE_INFINITY*t},s=t=>{let[p,e]=t;return p in c?c[p](e):void 0},d=t=>t.map(s),y=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([p,e])=>[p,s(e)]));class f extends HTMLElement{constructor(){super(...arguments);l(this,"Component");l(this,"hydrator");l(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let n=this.querySelectorAll("astro-slot"),r={},i=this.querySelectorAll("template[data-astro-template]");for(let o of i){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("data-astro-template")||"default"]=o.innerHTML,o.remove())}for(let o of n){let a=o.closest(this.tagName);a!=null&&a.isSameNode(this)&&(r[o.getAttribute("name")||"default"]=o.innerHTML)}let u;try{u=this.hasAttribute("props")?y(JSON.parse(this.getAttribute("props"))):{}}catch(o){let a=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(a+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${a}`,this.getAttribute("props"),o),o}let h;await this.hydrator(this)(this.Component,u,r,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});l(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),n.disconnect(),this.childrenConnectedCallback()},n=new MutationObserver(()=>{var r;((r=this.lastChild)==null?void 0:r.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});n.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}getRetryImportUrl(e){let n=new URL(e,document.baseURI),r=`astro-retry=${Date.now()}`,i=n.hash.replace(/^#/,"");return n.hash=i?`${i}&${r}`:r,n.toString()}async importWithRetry(e){try{return await import(e)}catch(n){return await new Promise(r=>setTimeout(r,1e3)),import(this.getRetryImportUrl(e))}}handleHydrationError(e){let n=this.getAttribute("component-url"),r=new CustomEvent("astro:hydration-error",{cancelable:!0,bubbles:!0,composed:!0,detail:{error:e,componentUrl:n}});this.dispatchEvent(r)&&console.error(`[astro-island] Error hydrating ${n}`,e)}async start(){let e=JSON.parse(this.getAttribute("opts")),n=this.getAttribute("client");if(Astro[n]===void 0){window.addEventListener(`astro:${n}`,()=>this.start(),{once:!0});return}try{await Astro[n](async()=>{let r=this.getAttribute("renderer-url");try{let[i,{default:u}]=await Promise.all([this.importWithRetry(this.getAttribute("component-url")),r?this.importWithRetry(r):Promise.resolve({default:()=>()=>{}})]),h=this.getAttribute("component-export")||"default";if(h.includes(".")){this.Component=i;for(let m of h.split(".")){if(E.has(m)||!this.Component||typeof this.Component!="object"&&typeof this.Component!="function"||!Object.hasOwn(this.Component,m))throw new Error(`Invalid component export path: ${h}`);this.Component=this.Component[m]}}else{if(E.has(h))throw new Error(`Invalid component export path: ${h}`);this.Component=i[h]}return this.hydrator=u,this.hydrate}catch(i){return this.handleHydrationError(i),()=>{}}},e,this)}catch(r){this.handleHydrationError(r)}}attributeChangedCallback(){this.hydrate()}}l(f,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",f)}})();</script>
+    <header class="border-b bg-white">
+        <div class="mx-auto max-w-3xl px-4 pb-4">
+            <h1 class="text-2xl font-bold text-[var(--forest)]">Bonus · Viết Workflow Spec bằng Markdown</h1>
+            <p class="mt-1 text-sm text-gray-600">Học viết bản thiết kế công việc (workflow spec) bằng Markdown, có ví dụ hoàn chỉnh — bài thưởng cuối chương trình.</p>
+        </div>
+    </header>
+    <script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();</script>
+    <astro-island uid="Z1JNnJo" prefix="r3" component-url="/_astro/lesson-renderer.nQ0UN1Rd.js" component-export="LessonRenderer" renderer-url="/_astro/client.DTojXMD-.js" props="{&quot;classId&quot;:[0,&quot;102&quot;],&quot;lessonId&quot;:[0,&quot;153&quot;],&quot;content&quot;:[0,{&quot;steps&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;intro&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;🎁 Bonus — Viết Workflow Spec bằng Markdown&quot;],&quot;body&quot;:[0,&quot;Ở Phần 4 bạn đã gặp **workflow spec**: bản thiết kế biến một mong muốn mờ thành việc chạy được. Bài bonus này dạy bạn **viết bản spec đó gọn gàng bằng Markdown** — thứ ngôn ngữ đơn giản mà cả bạn lẫn AI đều đọc tốt.\n\nHãy hình dung: spec là **bản vẽ bạn đưa cho thợ**. Thợ ở đây là AI Agent. Bản vẽ càng rõ, nhà xây càng đúng ý. Markdown chỉ là cách trình bày bản vẽ cho sạch — không phải lập trình, học 5 phút là xong.&quot;],&quot;callout&quot;:[0,&quot;Học xong bài này: bạn viết được một file spec đẹp, dán vào AI là nó hiểu ngay phải làm gì.&quot;]}],[0,{&quot;id&quot;:[0,&quot;md5&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Markdown trong 5 phút (chỉ cần 6 thứ)&quot;],&quot;body&quot;:[0,&quot;Markdown = viết chữ thường + vài ký hiệu để tạo tiêu đề, danh sách, bảng. Bạn chỉ cần 6 thứ:\n\n| Muốn gì | Gõ thế này |\n|---|---|\n| Tiêu đề lớn / nhỏ | `# Tiêu đề`, `## Mục nhỏ` |\n| Gạch đầu dòng | `- việc a` |\n| Danh sách có số | `1. bước một` |\n| Ô kiểm (checklist) | `- [ ] chưa xong`, `- [x] xong` |\n| In đậm | `**quan trọng**` |\n| Bảng | `\\| Cột A \\| Cột B \\|` |\n\nCàng nhiều `#` thì tiêu đề càng nhỏ. Chỉ vậy thôi — phần còn lại là nội dung của bạn.&quot;],&quot;callout&quot;:[0,&quot;Mẹo: gõ trong ô chat của Antigravity hoặc file .md bất kỳ đều hiển thị đúng.&quot;]}],[0,{&quot;id&quot;:[0,&quot;anatomy&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Một workflow spec gồm những mục nào&quot;],&quot;body&quot;:[0,&quot;Một spec tốt trả lời đủ các câu hỏi sau — mỗi câu là một mục (một `##`):\n\n- **Bối cảnh** — chuyện gì đang xảy ra, vì sao làm.\n- **Mục tiêu** — làm xong thì được cái gì (đo được càng tốt).\n- **Đối tượng** — phục vụ ai.\n- **Trigger** — điều gì khởi động quy trình.\n- **Các bước xử lý** — làm gì, theo thứ tự (danh sách có số).\n- **Ai làm gì** — bước nào AI làm, bước nào người làm (một cái bảng).\n- **Công cụ** — dự kiến dùng gì.\n- **Checklist hoàn thành** — thế nào là XONG.\n- **Rủi ro** — chỗ nào dễ hỏng.\n- **Đo kết quả** — nhìn con số nào biết thành công.\n\nKhông cần đủ 100%. Nhưng 4 mục **bắt buộc**: Mục tiêu · Các bước · Ai làm gì · Checklist.&quot;],&quot;callout&quot;:[0,&quot;Thiếu &#39;Checklist hoàn thành&#39; là lỗi phổ biến nhất — AI không biết khi nào dừng.&quot;]}],[0,{&quot;id&quot;:[0,&quot;build-1&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bắt tay viết — Bước 1: Tiêu đề + Mục tiêu&quot;],&quot;body&quot;:[0,&quot;Ta viết lại chính case chị Hương (Phần 4) nhưng bằng Markdown, từng khối một.\n\nMở đầu bằng tiêu đề `#` và hai mục `##`:\n\n```markdown\n# Workflow: Bán khoá học làm bánh cho mẹ bỉm\n\n## Mục tiêu\nCó trang bán khoá + quy trình chốt đơn, thu số điện thoại người quan tâm.\n\n## Đối tượng\nMẹ bỉm 25–35 tuổi, hay lướt Facebook.\n```\n\nĐọc lại: chỉ nhìn khối này, người lạ (hoặc AI) đã biết bạn muốn gì và cho ai. Đó là đích.&quot;],&quot;callout&quot;:[0,&quot;Viết Mục tiêu ở thì &#39;có được cái gì&#39;, đừng viết &#39;làm một trang web&#39; (đó là công cụ, không phải mục tiêu).&quot;]}],[0,{&quot;id&quot;:[0,&quot;build-2&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 2: Liệt kê Các bước xử lý&quot;],&quot;body&quot;:[0,&quot;Đây là phần lõi. Dùng **danh sách có số** để thể hiện thứ tự. Cứ tự hỏi \&quot;rồi tới gì nữa?\&quot;:\n\n```markdown\n## Các bước xử lý\n1. Viết offer (khoá gồm gì, giá 500k)\n2. Tạo landing page có form thu tên + SĐT\n3. Người đăng ký → lưu SĐT\n4. Tự động gửi tin nhắn xác nhận\n5. Gọi tư vấn, chốt\n6. Gửi QR chuyển khoản\n7. Xác nhận thanh toán → gửi link vào lớp\n```\n\nMẹo: mỗi bước bắt đầu bằng một **động từ** (viết, tạo, gửi, xác nhận). Nếu một bước quá to, tách đôi.&quot;],&quot;callout&quot;:[0,&quot;Chưa cần hoàn hảo. Viết nháp 7 bước rồi sửa còn tốt hơn ngồi nghĩ cho &#39;đúng&#39;.&quot;]}],[0,{&quot;id&quot;:[0,&quot;build-3&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 3: Tách việc AI vs Con người (bảng)&quot;],&quot;body&quot;:[0,&quot;Đây là bước &#39;ăn tiền&#39;: nói rõ **bước nào giao AI, bước nào người giữ**. Dùng một cái bảng:\n\n```markdown\n## Ai làm gì\n| Bước | AI Agent | Con người |\n|------|----------|-----------|\n| Viết offer | Gợi ý nội dung | Chị Hương duyệt |\n| Landing page + form | Tạo | — |\n| Tin nhắn xác nhận | Gửi tự động | — |\n| Tư vấn, chốt | — | Chị Hương |\n| Xác nhận thanh toán | — | Chị Hương |\n```\n\nNguyên tắc: việc **lặp lại, máy móc** → giao AI. Việc cần **cảm xúc, quyết định, tiền bạc** → giữ cho người.&quot;],&quot;callout&quot;:[0,&quot;Cột trống thì để dấu &#39;—&#39;. Bảng giúp bạn nhìn ra ngay chỗ nào đang ôm đồm quá.&quot;]}],[0,{&quot;id&quot;:[0,&quot;build-4&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Bước 4: Checklist · Rủi ro · Đo kết quả&quot;],&quot;body&quot;:[0,&quot;Khoá lại bằng ba mục ngắn để biết **khi nào xong** và **có tốt không**:\n\n```markdown\n## Checklist hoàn thành\n- [ ] Landing page chạy, form nhận được SĐT\n- [ ] Tin nhắn xác nhận gửi tự động\n- [ ] QR đúng số tài khoản\n\n## Rủi ro\n- Form không nhận SĐT → mất khách. Kiểm tra trước khi chạy quảng cáo.\n\n## Đo kết quả\nTỉ lệ chuyển đổi = số để lại SĐT ÷ số vào trang.\n```\n\n`- [ ]` là ô chưa tick, `- [x]` là đã xong. Checklist chính là định nghĩa &#39;DONE&#39; cho AI và cho bạn.&quot;],&quot;callout&quot;:[0,&quot;Có Checklist + Đo kết quả thì bạn mới biết dừng đúng lúc và làm lại có tiến bộ.&quot;]}],[0,{&quot;id&quot;:[0,&quot;full&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;📋 Bản spec hoàn chỉnh (copy được ngay)&quot;],&quot;body&quot;:[0,&quot;Ghép lại, đây là spec chị Hương đầy đủ. Bạn có thể **copy nguyên khối này** làm khuôn cho việc của mình:\n\n```markdown\n# Workflow: Bán khoá học làm bánh cho mẹ bỉm\n\n## Bối cảnh\nChị Hương bán bánh online, muốn mở lớp dạy làm bánh. Chưa biết bắt đầu từ đâu.\n\n## Mục tiêu\nCó trang bán khoá học + quy trình chốt đơn, thu được số điện thoại người quan tâm.\n\n## Đối tượng\nMẹ bỉm 25–35 tuổi, hay lướt Facebook, thích tự làm bánh cho con.\n\n## Trigger (điều gì khởi động)\nNgười xem bấm vào bài quảng cáo Facebook → vào landing page.\n\n## Các bước xử lý\n1. Viết offer (khoá gồm gì, giá 500k, ưu đãi)\n2. Tạo landing page có form thu tên + SĐT\n3. Người đăng ký → lưu SĐT\n4. Tự động gửi tin nhắn xác nhận\n5. Chị Hương gọi tư vấn, chốt\n6. Gửi QR chuyển khoản\n7. Xác nhận thanh toán → gửi link vào lớp\n\n## Ai làm gì\n| Bước | AI Agent | Con người |\n|------|----------|-----------|\n| Viết offer | Gợi ý nội dung | Chị Hương duyệt |\n| Landing page + form | Tạo | — |\n| Tin nhắn xác nhận | Gửi tự động | — |\n| Tư vấn, chốt | — | Chị Hương |\n| Xác nhận thanh toán | — | Chị Hương |\n\n## Công cụ dự kiến\nAntigravity (tạo trang), form thu lead, QR ngân hàng.\n\n## Checklist hoàn thành\n- [ ] Offer viết xong, đã duyệt\n- [ ] Landing page chạy, form nhận được SĐT\n- [ ] Tin nhắn xác nhận gửi tự động\n- [ ] QR đúng số tài khoản\n- [ ] Gửi được link lớp học\n\n## Rủi ro\n- Form không nhận SĐT → mất khách. Kiểm tra trước khi chạy quảng cáo.\n\n## Đo kết quả\nTỉ lệ chuyển đổi = số người để lại SĐT ÷ số người vào trang.\n```\n\nĐọc từ trên xuống: nó là một **bản đồ**. Ai cầm cũng biết đường đi.&quot;],&quot;callout&quot;:[0,&quot;Đây chính là &#39;sản phẩm cầm tay&#39; của buổi 1 — nhưng viết đẹp, sẵn sàng đưa cho AI.&quot;]}],[0,{&quot;id&quot;:[0,&quot;give-to-ai&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;Đưa spec cho AI thế nào&quot;],&quot;body&quot;:[0,&quot;Có spec rồi, dùng đúng vòng lặp **Scout → Brainstorm → Plan → Cook → Test → Fix** (Phần 5):\n\n1. Mở Antigravity, **dán cả bản spec** vào chat.\n2. Bảo: *\&quot;Đọc workflow spec này. Đừng làm ngay — hãy lập plan từng bước và hỏi lại nếu chỗ nào chưa rõ.\&quot;*\n3. AI trả về plan → bạn **đọc &amp; duyệt** (sửa chỗ sai trước khi cho chạy).\n4. Duyệt xong mới bảo *\&quot;Ổn rồi, làm bước 1 trước.\&quot;* — làm từng bước, kiểm tra rồi đi tiếp.\n\nSpec rõ + bắt AI lập plan trước = agent không làm bậy.&quot;],&quot;callout&quot;:[0,&quot;Luôn bắt AI &#39;lập plan và mình duyệt&#39; trước khi cho nó thực thi — đây là thói quen an toàn cả khoá.&quot;]}],[0,{&quot;id&quot;:[0,&quot;mistakes&quot;],&quot;type&quot;:[0,&quot;theory&quot;],&quot;title&quot;:[0,&quot;4 lỗi thường gặp (và cách chữa)&quot;],&quot;body&quot;:[0,&quot;- **Mục tiêu mờ**: &#39;làm cái web&#39;. → Sửa: nói rõ *được cái gì* (&#39;thu SĐT mẹ bỉm quan tâm khoá bánh&#39;).\n- **Thiếu Checklist**: AI không biết khi nào xong → làm lan man. → Sửa: thêm 3–5 ô `- [ ]` cụ thể.\n- **Không tách AI/Người**: giao AI cả việc gọi điện chốt sale. → Sửa: bảng &#39;Ai làm gì&#39;, giữ việc cảm xúc/tiền cho người.\n- **Bước quá to**: &#39;làm marketing&#39;. → Sửa: tách thành các bước có động từ (&#39;viết offer&#39;, &#39;tạo trang&#39;, &#39;gửi tin&#39;).&quot;],&quot;callout&quot;:[0,&quot;Spec dở không phải do bạn kém — do thiếu một trong 4 mục lõi. Thêm vào là ổn.&quot;]}],[0,{&quot;id&quot;:[0,&quot;practice&quot;],&quot;type&quot;:[0,&quot;external-action&quot;],&quot;instructions&quot;:[0,&quot;Tới lượt bạn. Chọn MỘT việc thật trong marketing / đào tạo / vận hành của bạn, và viết một workflow spec bằng Markdown theo khuôn trên (tối thiểu 4 mục: Mục tiêu · Các bước · Ai làm gì · Checklist). Dán vào đây để lưu — buổi sau ta biến nó thành sản phẩm thật.&quot;],&quot;inputs&quot;:[1,[[0,{&quot;id&quot;:[0,&quot;bonus-spec&quot;],&quot;type&quot;:[0,&quot;long-text&quot;],&quot;prompt&quot;:[0,&quot;Workflow spec của bạn (viết bằng Markdown, nháp cũng được)&quot;],&quot;placeholder&quot;:[0,&quot;# Workflow: ...\n\n## Mục tiêu\n...\n\n## Các bước xử lý\n1. ...\n\n## Checklist hoàn thành\n- [ ] ...&quot;]}]]]}],[0,{&quot;id&quot;:[0,&quot;done&quot;],&quot;type&quot;:[0,&quot;acknowledge&quot;],&quot;body&quot;:[0,&quot;Bạn vừa học xong cách viết một workflow spec gọn gàng bằng Markdown: 6 ký hiệu Markdown cần nhớ, các mục của spec, và một ví dụ hoàn chỉnh có thể copy. Giờ mỗi khi muốn giao việc cho AI, hãy viết spec trước — rồi mới cook.&quot;],&quot;checkboxLabel&quot;:[0,&quot;Tôi đã biết viết workflow spec bằng Markdown&quot;]}]]],&quot;meta&quot;:[0,{&quot;chatMode&quot;:[0,true]}]}],&quot;initialAnswers&quot;:[0,{}],&quot;isSubmitted&quot;:[0,true],&quot;nextLessonSlug&quot;:[0,&quot;bonus-video-transcript&quot;],&quot;classSlug&quot;:[0,&quot;ai-blackboard-2026&quot;],&quot;preview&quot;:[0,false],&quot;chatMode&quot;:[0,true]}" client="load" opts="{&quot;name&quot;:&quot;LessonRenderer&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="mx-auto max-w-3xl space-y-5 p-4">
+            <div id="intro" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">🎁 Bonus — Viết Workflow Spec bằng Markdown</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Ở Phần 4 bạn đã gặp <strong>workflow spec</strong>: bản thiết kế biến một mong muốn mờ thành việc chạy được. Bài bonus này dạy bạn <strong>viết bản spec đó gọn gàng bằng Markdown</strong> — thứ ngôn ngữ đơn giản mà cả bạn lẫn AI đều đọc tốt.</p>
+                        <p>Hãy hình dung: spec là <strong>bản vẽ bạn đưa cho thợ</strong>. Thợ ở đây là AI Agent. Bản vẽ càng rõ, nhà xây càng đúng ý. Markdown chỉ là cách trình bày bản vẽ cho sạch — không phải lập trình, học 5 phút là xong.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Học xong bài này: bạn viết được một file spec đẹp, dán vào AI là nó hiểu ngay phải làm gì.</blockquote>
+                </section>
+            </div>
+            <div id="md5" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Markdown trong 5 phút (chỉ cần 6 thứ)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Markdown = viết chữ thường + vài ký hiệu để tạo tiêu đề, danh sách, bảng. Bạn chỉ cần 6 thứ:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Muốn gì</th>
+                                    <th>Gõ thế này</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Tiêu đề lớn / nhỏ</td>
+                                    <td><code># Tiêu đề</code>, <code>## Mục nhỏ</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Gạch đầu dòng</td>
+                                    <td><code>- việc a</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Danh sách có số</td>
+                                    <td><code>1. bước một</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Ô kiểm (checklist)</td>
+                                    <td><code>- [ ] chưa xong</code>, <code>- [x] xong</code></td>
+                                </tr>
+                                <tr>
+                                    <td>In đậm</td>
+                                    <td><code>**quan trọng**</code></td>
+                                </tr>
+                                <tr>
+                                    <td>Bảng</td>
+                                    <td><code>| Cột A | Cột B |</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>Càng nhiều <code>#</code> thì tiêu đề càng nhỏ. Chỉ vậy thôi — phần còn lại là nội dung của bạn.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Mẹo: gõ trong ô chat của Antigravity hoặc file .md bất kỳ đều hiển thị đúng.</blockquote>
+                </section>
+            </div>
+            <div id="anatomy" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Một workflow spec gồm những mục nào</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Một spec tốt trả lời đủ các câu hỏi sau — mỗi câu là một mục (một <code>##</code>):</p>
+                        <ul>
+                            <li><strong>Bối cảnh</strong> — chuyện gì đang xảy ra, vì sao làm.</li>
+                            <li><strong>Mục tiêu</strong> — làm xong thì được cái gì (đo được càng tốt).</li>
+                            <li><strong>Đối tượng</strong> — phục vụ ai.</li>
+                            <li><strong>Trigger</strong> — điều gì khởi động quy trình.</li>
+                            <li><strong>Các bước xử lý</strong> — làm gì, theo thứ tự (danh sách có số).</li>
+                            <li><strong>Ai làm gì</strong> — bước nào AI làm, bước nào người làm (một cái bảng).</li>
+                            <li><strong>Công cụ</strong> — dự kiến dùng gì.</li>
+                            <li><strong>Checklist hoàn thành</strong> — thế nào là XONG.</li>
+                            <li><strong>Rủi ro</strong> — chỗ nào dễ hỏng.</li>
+                            <li><strong>Đo kết quả</strong> — nhìn con số nào biết thành công.</li>
+                        </ul>
+                        <p>Không cần đủ 100%. Nhưng 4 mục <strong>bắt buộc</strong>: Mục tiêu · Các bước · Ai làm gì · Checklist.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Thiếu 'Checklist hoàn thành' là lỗi phổ biến nhất — AI không biết khi nào dừng.</blockquote>
+                </section>
+            </div>
+            <div id="build-1" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bắt tay viết — Bước 1: Tiêu đề + Mục tiêu</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Ta viết lại chính case chị Hương (Phần 4) nhưng bằng Markdown, từng khối một.</p>
+                        <p>Mở đầu bằng tiêu đề <code>#</code> và hai mục <code>##</code>:</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code># Workflow: Bán khoá học làm bánh cho mẹ bỉm
+
+## Mục tiêu
+Có trang bán khoá + quy trình chốt đơn, thu số điện thoại người quan tâm.
+
+## Đối tượng
+Mẹ bỉm 25–35 tuổi, hay lướt Facebook.
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <p>Đọc lại: chỉ nhìn khối này, người lạ (hoặc AI) đã biết bạn muốn gì và cho ai. Đó là đích.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Viết Mục tiêu ở thì 'có được cái gì', đừng viết 'làm một trang web' (đó là công cụ, không phải mục tiêu).</blockquote>
+                </section>
+            </div>
+            <div id="build-2" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 2: Liệt kê Các bước xử lý</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Đây là phần lõi. Dùng <strong>danh sách có số</strong> để thể hiện thứ tự. Cứ tự hỏi "rồi tới gì nữa?":</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code>## Các bước xử lý
+1. Viết offer (khoá gồm gì, giá 500k)
+2. Tạo landing page có form thu tên + SĐT
+3. Người đăng ký → lưu SĐT
+4. Tự động gửi tin nhắn xác nhận
+5. Gọi tư vấn, chốt
+6. Gửi QR chuyển khoản
+7. Xác nhận thanh toán → gửi link vào lớp
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <p>Mẹo: mỗi bước bắt đầu bằng một <strong>động từ</strong> (viết, tạo, gửi, xác nhận). Nếu một bước quá to, tách đôi.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Chưa cần hoàn hảo. Viết nháp 7 bước rồi sửa còn tốt hơn ngồi nghĩ cho 'đúng'.</blockquote>
+                </section>
+            </div>
+            <div id="build-3" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 3: Tách việc AI vs Con người (bảng)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Đây là bước 'ăn tiền': nói rõ <strong>bước nào giao AI, bước nào người giữ</strong>. Dùng một cái bảng:</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code>## Ai làm gì
+| Bước | AI Agent | Con người |
+|------|----------|-----------|
+| Viết offer | Gợi ý nội dung | Chị Hương duyệt |
+| Landing page + form | Tạo | — |
+| Tin nhắn xác nhận | Gửi tự động | — |
+| Tư vấn, chốt | — | Chị Hương |
+| Xác nhận thanh toán | — | Chị Hương |
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <p>Nguyên tắc: việc <strong>lặp lại, máy móc</strong> → giao AI. Việc cần <strong>cảm xúc, quyết định, tiền bạc</strong> → giữ cho người.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Cột trống thì để dấu '—'. Bảng giúp bạn nhìn ra ngay chỗ nào đang ôm đồm quá.</blockquote>
+                </section>
+            </div>
+            <div id="build-4" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Bước 4: Checklist · Rủi ro · Đo kết quả</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Khoá lại bằng ba mục ngắn để biết <strong>khi nào xong</strong> và <strong>có tốt không</strong>:</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code>## Checklist hoàn thành
+- [ ] Landing page chạy, form nhận được SĐT
+- [ ] Tin nhắn xác nhận gửi tự động
+- [ ] QR đúng số tài khoản
+
+## Rủi ro
+- Form không nhận SĐT → mất khách. Kiểm tra trước khi chạy quảng cáo.
+
+## Đo kết quả
+Tỉ lệ chuyển đổi = số để lại SĐT ÷ số vào trang.
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <p><code>- [ ]</code> là ô chưa tick, <code>- [x]</code> là đã xong. Checklist chính là định nghĩa 'DONE' cho AI và cho bạn.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Có Checklist + Đo kết quả thì bạn mới biết dừng đúng lúc và làm lại có tiến bộ.</blockquote>
+                </section>
+            </div>
+            <div id="full" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">📋 Bản spec hoàn chỉnh (copy được ngay)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Ghép lại, đây là spec chị Hương đầy đủ. Bạn có thể <strong>copy nguyên khối này</strong> làm khuôn cho việc của mình:</p>
+                        <pre data-copy-ready="1" style="position: relative;"><code># Workflow: Bán khoá học làm bánh cho mẹ bỉm
+
+## Bối cảnh
+Chị Hương bán bánh online, muốn mở lớp dạy làm bánh. Chưa biết bắt đầu từ đâu.
+
+## Mục tiêu
+Có trang bán khoá học + quy trình chốt đơn, thu được số điện thoại người quan tâm.
+
+## Đối tượng
+Mẹ bỉm 25–35 tuổi, hay lướt Facebook, thích tự làm bánh cho con.
+
+## Trigger (điều gì khởi động)
+Người xem bấm vào bài quảng cáo Facebook → vào landing page.
+
+## Các bước xử lý
+1. Viết offer (khoá gồm gì, giá 500k, ưu đãi)
+2. Tạo landing page có form thu tên + SĐT
+3. Người đăng ký → lưu SĐT
+4. Tự động gửi tin nhắn xác nhận
+5. Chị Hương gọi tư vấn, chốt
+6. Gửi QR chuyển khoản
+7. Xác nhận thanh toán → gửi link vào lớp
+
+## Ai làm gì
+| Bước | AI Agent | Con người |
+|------|----------|-----------|
+| Viết offer | Gợi ý nội dung | Chị Hương duyệt |
+| Landing page + form | Tạo | — |
+| Tin nhắn xác nhận | Gửi tự động | — |
+| Tư vấn, chốt | — | Chị Hương |
+| Xác nhận thanh toán | — | Chị Hương |
+
+## Công cụ dự kiến
+Antigravity (tạo trang), form thu lead, QR ngân hàng.
+
+## Checklist hoàn thành
+- [ ] Offer viết xong, đã duyệt
+- [ ] Landing page chạy, form nhận được SĐT
+- [ ] Tin nhắn xác nhận gửi tự động
+- [ ] QR đúng số tài khoản
+- [ ] Gửi được link lớp học
+
+## Rủi ro
+- Form không nhận SĐT → mất khách. Kiểm tra trước khi chạy quảng cáo.
+
+## Đo kết quả
+Tỉ lệ chuyển đổi = số người để lại SĐT ÷ số người vào trang.
+</code><button type="button" style="position: absolute; top: 8px; right: 8px; padding: 4px 10px; font-size: 12px; font-weight: 600; line-height: 1; color: rgb(255, 250, 240); background: rgb(33, 70, 56); border: none; border-radius: 6px; cursor: pointer; opacity: 0.9;">Copy</button></pre>
+                        <p>Đọc từ trên xuống: nó là một <strong>bản đồ</strong>. Ai cầm cũng biết đường đi.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Đây chính là 'sản phẩm cầm tay' của buổi 1 — nhưng viết đẹp, sẵn sàng đưa cho AI.</blockquote>
+                </section>
+            </div>
+            <div id="give-to-ai" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">Đưa spec cho AI thế nào</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <p>Có spec rồi, dùng đúng vòng lặp <strong>Scout → Brainstorm → Plan → Cook → Test → Fix</strong> (Phần 5):</p>
+                        <ol>
+                            <li>Mở Antigravity, <strong>dán cả bản spec</strong> vào chat.</li>
+                            <li>Bảo: <em>"Đọc workflow spec này. Đừng làm ngay — hãy lập plan từng bước và hỏi lại nếu chỗ nào chưa rõ."</em></li>
+                            <li>AI trả về plan → bạn <strong>đọc &amp; duyệt</strong> (sửa chỗ sai trước khi cho chạy).</li>
+                            <li>Duyệt xong mới bảo <em>"Ổn rồi, làm bước 1 trước."</em> — làm từng bước, kiểm tra rồi đi tiếp.</li>
+                        </ol>
+                        <p>Spec rõ + bắt AI lập plan trước = agent không làm bậy.</p>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Luôn bắt AI 'lập plan và mình duyệt' trước khi cho nó thực thi — đây là thói quen an toàn cả khoá.</blockquote>
+                </section>
+            </div>
+            <div id="mistakes" class="scroll-mt-16">
+                <section class="rounded-lg bg-white p-5 shadow-sm">
+                    <h2 class="mb-3 text-xl font-semibold text-[var(--forest)]">4 lỗi thường gặp (và cách chữa)</h2>
+                    <div class="lesson-prose text-gray-800">
+                        <ul>
+                            <li><strong>Mục tiêu mờ</strong>: 'làm cái web'. → Sửa: nói rõ <em>được cái gì</em> ('thu SĐT mẹ bỉm quan tâm khoá bánh').</li>
+                            <li><strong>Thiếu Checklist</strong>: AI không biết khi nào xong → làm lan man. → Sửa: thêm 3–5 ô <code>- [ ]</code> cụ thể.</li>
+                            <li><strong>Không tách AI/Người</strong>: giao AI cả việc gọi điện chốt sale. → Sửa: bảng 'Ai làm gì', giữ việc cảm xúc/tiền cho người.</li>
+                            <li><strong>Bước quá to</strong>: 'làm marketing'. → Sửa: tách thành các bước có động từ ('viết offer', 'tạo trang', 'gửi tin').</li>
+                        </ul>
+                    </div>
+                    <blockquote class="mt-4 border-l-4 border-[var(--forest)] bg-[var(--bg)] p-3 italic text-gray-700">Spec dở không phải do bạn kém — do thiếu một trong 4 mục lõi. Thêm vào là ổn.</blockquote>
+                </section>
+            </div>
+            <div></div>
+        </div>
+    </astro-island>
+    <astro-island uid="Z29fhHP" prefix="r5" component-url="/_astro/help-bell-widget.Bki928HK.js" component-export="HelpBellWidget" renderer-url="/_astro/client.DTojXMD-.js" props="{}" client="idle" opts="{&quot;name&quot;:&quot;HelpBellWidget&quot;,&quot;value&quot;:true}" await-children="">
+        <div class="fixed bottom-5 right-5 z-40 print:hidden"><button type="button" aria-label="Cần trợ giúp" aria-expanded="false" class="flex h-14 w-14 items-center justify-center rounded-full bg-red-600 text-white shadow-lg transition hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-6 w-6" aria-hidden="true">
+                    <path d="M12 2a1 1 0 0 1 1 1v.6a6 6 0 0 1 5 5.9v3.2l1.7 2.6a1 1 0 0 1-.84 1.55H5.14a1 1 0 0 1-.84-1.55L6 12.7V9.5a6 6 0 0 1 5-5.9V3a1 1 0 0 1 1-1Zm0 20a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22Z"></path>
+                </svg></button></div>
+    </astro-island>
+</body>
+
+</html>
